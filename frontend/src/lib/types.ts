@@ -5,7 +5,7 @@ export type Script = {
   slug: string;
   categories: number[];
   date_created: string;
-  type: "vm" | "ct" | "misc";
+  type: "vm" | "ct" | "pve" | "addon";
   updateable: boolean;
   privileged: boolean;
   interface_port: number | null;
@@ -55,4 +55,10 @@ export interface Version {
 export interface OperatingSystem {
   name: string;
   versions: Version[];
+}
+
+export interface AppVersion {
+  name: string;
+  version: string;
+  date: Date;
 }

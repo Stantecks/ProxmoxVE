@@ -3,10 +3,10 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck
 # Co-Author: havardthom
-# License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# Source: https://ollama.com/
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
 catch_errors
@@ -15,21 +15,23 @@ network_check
 update_os
 
 msg_info "Installing Dependencies"
-$STD apt-get install -y curl
-$STD apt-get install -y sudo
-$STD apt-get install -y mc
-$STD apt-get install -y gpg
-$STD apt-get install -y git
-$STD apt-get install -y build-essential
-$STD apt-get install -y pkg-config
-$STD apt-get install -y cmake
+$STD apt-get install -y \
+  gpg \
+  git \
+  build-essential \
+  pkg-config \
+  cmake
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Golang"
-$STD wget https://golang.org/dl/go1.23.2.linux-amd64.tar.gz
-$STD tar -xzf go1.23.2.linux-amd64.tar.gz -C /usr/local
-$STD ln -s /usr/local/go/bin/go /usr/local/bin/go
-rm -rf go1.23.2.linux-amd64.tar.gz
+set +o pipefail
+temp_file=$(mktemp)
+golang_tarball=$(curl -fsSL https://go.dev/dl/ | grep -oP 'go[\d\.]+\.linux-amd64\.tar\.gz' | head -n 1)
+curl -fsSL "https://golang.org/dl/${golang_tarball}" -o "$temp_file"
+tar -C /usr/local -xzf "$temp_file"
+ln -sf /usr/local/go/bin/go /usr/local/bin/go
+rm -f "$temp_file"
+set -o pipefail
 msg_ok "Installed Golang"
 
 msg_info "Setting up Intel® Repositories"
@@ -84,7 +86,7 @@ RestartSec=3
 [Install]
 WantedBy=multi-user.target
 EOF
-systemctl enable -q --now ollama.service
+systemctl enable -q --now ollama
 msg_ok "Created Service"
 
 motd_ssh

@@ -3,6 +3,7 @@
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: remz1337
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# Source: https://goauthentik.io/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
@@ -14,9 +15,6 @@ update_os
 
 msg_info "Installing Dependencies (Patience)"
 $STD apt-get install -y \
-  curl \
-  sudo \
-  mc \
   gpg \
   pkg-config \
   libffi-dev \
@@ -40,15 +38,15 @@ msg_ok "Installed Dependencies"
 
 msg_info "Installing yq"
 cd /tmp
-YQ_LATEST="$(wget -qO- "https://api.github.com/repos/mikefarah/yq/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')"
-wget -q "https://github.com/mikefarah/yq/releases/download/${YQ_LATEST}/yq_linux_amd64" -qO /usr/bin/yq
+YQ_LATEST="$(curl -fsSL https://api.github.com/repos/mikefarah/yq/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')"
+curl -fsSL "https://github.com/mikefarah/yq/releases/download/${YQ_LATEST}/yq_linux_amd64" -o /usr/bin/yq
 chmod +x /usr/bin/yq
 msg_ok "Installed yq"
 
 msg_info "Installing GeoIP"
 cd /tmp
-GEOIP_RELEASE=$(curl -s https://api.github.com/repos/maxmind/geoipupdate/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
-wget -qO geoipupdate.deb https://github.com/maxmind/geoipupdate/releases/download/v${GEOIP_RELEASE}/geoipupdate_${GEOIP_RELEASE}_linux_amd64.deb
+GEOIP_RELEASE=$(curl -fsSL https://api.github.com/repos/maxmind/geoipupdate/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+curl -fsSL "https://github.com/maxmind/geoipupdate/releases/download/v${GEOIP_RELEASE}/geoipupdate_${GEOIP_RELEASE}_linux_amd64.deb" -o "geoipupdate.deb"
 $STD dpkg -i geoipupdate.deb
 cat <<EOF >/etc/GeoIP.conf
 #GEOIPUPDATE_EDITION_IDS="GeoLite2-City GeoLite2-ASN"
@@ -60,7 +58,7 @@ msg_ok "Installed GeoIP"
 
 msg_info "Setting up Python 3"
 cd /tmp
-wget -q https://www.python.org/ftp/python/3.12.1/Python-3.12.1.tgz -O Python.tgz
+curl -fsSL "https://www.python.org/ftp/python/3.12.1/Python-3.12.1.tgz" -o "Python.tgz"
 tar -zxf Python.tgz
 cd Python-3.12.1
 $STD ./configure --enable-optimizations
@@ -81,12 +79,13 @@ $STD apt-get install -y nodejs
 msg_ok "Installed Node.js"
 
 msg_info "Installing Golang"
-cd /tmp
 set +o pipefail
-GO_RELEASE=$(curl -s https://go.dev/dl/ | grep -o -m 1 "go.*\linux-amd64.tar.gz")
-wget -q https://golang.org/dl/${GO_RELEASE}
-tar -xzf ${GO_RELEASE} -C /usr/local
-ln -s /usr/local/go/bin/go /usr/bin/go
+temp_file=$(mktemp)
+golang_tarball=$(curl -fsSL https://go.dev/dl/ | grep -oP 'go[\d\.]+\.linux-amd64\.tar\.gz' | head -n 1)
+curl -fsSL "https://golang.org/dl/${golang_tarball}" -o "$temp_file"
+tar -C /usr/local -xzf "$temp_file"
+ln -sf /usr/local/go/bin/go /usr/local/bin/go
+rm -f "$temp_file"
 set -o pipefail
 msg_ok "Installed Golang"
 
@@ -102,15 +101,15 @@ DB_USER="authentik"
 DB_PASS="$(openssl rand -base64 18 | cut -c1-13)"
 $STD sudo -u postgres psql -c "CREATE DATABASE $DB_NAME;"
 $STD sudo -u postgres psql -c "CREATE USER $DB_USER WITH PASSWORD '$DB_PASS';"
-$STD sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $DB_USER;" 
+$STD sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $DB_USER;"
 $STD sudo -u postgres psql -c "ALTER DATABASE $DB_NAME OWNER TO $DB_USER;"
 $STD sudo -u postgres psql -c "ALTER USER $DB_USER WITH SUPERUSER;"
 msg_ok "Installed PostgreSQL"
 
 msg_info "Installing authentik"
-RELEASE=$(curl -s https://api.github.com/repos/goauthentik/authentik/releases/latest | grep "tarball_url" | awk '{print substr($2, 2, length($2)-3)}')
+RELEASE=$(curl -fsSL https://api.github.com/repos/goauthentik/authentik/releases/latest | grep "tarball_url" | awk '{print substr($2, 2, length($2)-3)}')
 mkdir -p /opt/authentik
-wget -qO authentik.tar.gz "${RELEASE}"
+curl -fsSL "${RELEASE}" -o "authentik.tar.gz"
 tar -xzf authentik.tar.gz -C /opt/authentik --strip-components 1 --overwrite
 cd /opt/authentik/website
 $STD npm install
@@ -186,7 +185,6 @@ msg_info "Cleaning up"
 rm -rf /tmp/Python-3.12.1
 rm -rf /tmp/Python.tgz
 rm -rf go/
-rm -rf /tmp/${GO_RELEASE}
 rm -rf /tmp/geoipupdate.deb
 rm -rf authentik.tar.gz
 $STD apt-get -y remove yq

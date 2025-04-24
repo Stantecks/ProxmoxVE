@@ -2,10 +2,10 @@
 
 # Copyright (c) 2021-2024 tteck
 # Author: MickLesk (Canbiz)
-# License: MIT | https://github.com/tteck/Proxmox/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://github.com/NodeBB/NodeBB
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
 catch_errors
@@ -15,15 +15,11 @@ update_os
 
 msg_info "Installing Dependencies (Patience)"
 $STD apt-get install -y \
-  build-essential \
-  curl \
-  sudo \
-  make \
-  redis-server \
-  expect \
-  gnupg \
-  ca-certificates \
-  mc
+    build-essential \
+    redis-server \
+    expect \
+    gnupg \
+    ca-certificates
 msg_ok "Installed Dependencies"
 
 msg_info "Setting up Node.js & MongoDB Repository"
@@ -32,7 +28,7 @@ curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dea
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" >/etc/apt/sources.list.d/nodesource.list
 
 curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | gpg --dearmor -o /etc/apt/keyrings/mongodb-server-8.0.gpg
-echo "deb [arch=amd64,arm64 signed-by=/etc/apt/keyrings/mongodb-server-8.0.gpg] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" > /etc/apt/sources.list.d/mongodb-org-8.0.list
+echo "deb [arch=amd64,arm64 signed-by=/etc/apt/keyrings/mongodb-server-8.0.gpg] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" >/etc/apt/sources.list.d/mongodb-org-8.0.list
 $STD apt-get update
 msg_ok "Set up Repositories"
 
@@ -44,7 +40,7 @@ msg_info "Installing MongoDB"
 $STD apt-get install -y mongodb-org
 systemctl enable -q --now mongod
 sleep 10 # MongoDB needs some secounds to start, if not sleep it collide with following mongosh
-msg_ok "Installed MongoDB"   
+msg_ok "Installed MongoDB"
 
 msg_info "Configure MongoDB"
 MONGO_ADMIN_USER="admin"
@@ -58,9 +54,9 @@ NODEBB_SECRET=$(uuidgen)
     echo "Mongo Database User: $MONGO_ADMIN_USER"
     echo "Mongo Database Password: $MONGO_ADMIN_PWD"
     echo "NodeBB User: $NODEBB_USER"
-	echo "NodeBB Password: $NODEBB_PWD"
-	echo "NodeBB Secret: $NODEBB_SECRET"
-} >> ~/nodebb.creds
+    echo "NodeBB Password: $NODEBB_PWD"
+    echo "NodeBB Secret: $NODEBB_SECRET"
+} >>~/nodebb.creds
 
 $STD mongosh <<EOF
 use admin
@@ -85,17 +81,17 @@ sed -i 's/bindIp: 127.0.0.1/bindIp: 0.0.0.0/' /etc/mongod.conf
 sed -i '/security:/d' /etc/mongod.conf
 bash -c 'echo -e "\nsecurity:\n  authorization: enabled" >> /etc/mongod.conf'
 systemctl restart mongod
-msg_ok "MongoDB successfully configurated" 
+msg_ok "MongoDB successfully configurated"
 
-msg_info "Install NodeBB" 
+msg_info "Install NodeBB"
 cd /opt
-RELEASE=$(curl -s https://api.github.com/repos/NodeBB/NodeBB/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
-wget -q "https://github.com/NodeBB/NodeBB/archive/refs/tags/v${RELEASE}.zip"
+RELEASE=$(curl -fsSL https://api.github.com/repos/NodeBB/NodeBB/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+curl -fsSL "https://github.com/NodeBB/NodeBB/archive/refs/tags/v${RELEASE}.zip" -o $(basename "https://github.com/NodeBB/NodeBB/archive/refs/tags/v${RELEASE}.zip")
 unzip -q v${RELEASE}.zip
 mv NodeBB-${RELEASE} /opt/nodebb
 cd /opt/nodebb
 touch pidfile
-expect <<EOF > /dev/null 2>&1
+expect <<EOF >/dev/null 2>&1
 log_file /dev/null
 set timeout -1
 

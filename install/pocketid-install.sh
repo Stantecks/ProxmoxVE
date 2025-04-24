@@ -3,9 +3,9 @@
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Snarkenfaugister
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
-# Source: https://github.com/stonith404/pocket-id
+# Source: https://github.com/pocket-id/pocket-id
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
 catch_errors
@@ -15,9 +15,6 @@ update_os
 
 msg_info "Installing Dependencies"
 $STD apt-get install -y \
-  curl \
-  sudo \
-  mc \
   gpg \
   caddy \
   gcc
@@ -35,20 +32,21 @@ $STD apt-get install -y nodejs
 msg_ok "Installed Node.js"
 
 msg_info "Installing Golang"
-cd /tmp
 set +o pipefail
-GO_RELEASE=$(curl -s https://go.dev/dl/ | grep -o -m 1 "go.*\linux-amd64.tar.gz")
-wget -q https://golang.org/dl/${GO_RELEASE}
-tar -xzf ${GO_RELEASE} -C /usr/local
-ln -s /usr/local/go/bin/go /usr/bin/go
+temp_file=$(mktemp)
+golang_tarball=$(curl -fsSL https://go.dev/dl/ | grep -oP 'go[\d\.]+\.linux-amd64\.tar\.gz' | head -n 1)
+curl -fsSL "https://golang.org/dl/${golang_tarball}" -o "$temp_file"
+tar -C /usr/local -xzf "$temp_file"
+ln -sf /usr/local/go/bin/go /usr/local/bin/go
+rm -f "$temp_file"
 set -o pipefail
 msg_ok "Installed Golang"
 
 read -r -p "What public URL do you want to use (e.g. pocketid.mydomain.com)? " public_url
 msg_info "Setup Pocket ID"
 cd /opt
-RELEASE=$(curl -s https://api.github.com/repos/stonith404/pocket-id/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
-wget -q "https://github.com/stonith404/pocket-id/archive/refs/tags/v${RELEASE}.zip"
+RELEASE=$(curl -fsSL https://api.github.com/repos/pocket-id/pocket-id/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+curl -fsSL "https://github.com/pocket-id/pocket-id/archive/refs/tags/v${RELEASE}.zip" -o $(basename "https://github.com/pocket-id/pocket-id/archive/refs/tags/v${RELEASE}.zip")
 unzip -q v${RELEASE}.zip
 mv pocket-id-${RELEASE}/ /opt/pocket-id
 
@@ -56,7 +54,7 @@ cd /opt/pocket-id/backend
 cp .env.example .env
 sed -i "s/PUBLIC_APP_URL=http:\/\/localhost/PUBLIC_APP_URL=https:\/\/${public_url}/" .env
 cd cmd
-CGO_ENABLED=1 
+CGO_ENABLED=1
 GOOS=linux
 $STD go build -o ../pocket-id-backend
 

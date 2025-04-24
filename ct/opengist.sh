@@ -1,25 +1,20 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: Jonathan (jd-apprentice)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://opengist.io/
 
-# App Default Values
 APP="Opengist"
-var_tags="development"
-var_cpu="1"
-var_ram="1024"
-var_disk="8"
-var_os="debian"
-var_version="12"
-var_unprivileged="1"
+var_tags="${var_tags:-development}"
+var_cpu="${var_cpu:-1}"
+var_ram="${var_ram:-1024}"
+var_disk="${var_disk:-8}"
+var_os="${var_os:-debian}"
+var_version="${var_version:-12}"
+var_unprivileged="${var_unprivileged:-1}"
 
-# App Output & Base Settings
 header_info "$APP"
-base_settings
-
-# Core
 variables
 color
 catch_errors
@@ -32,18 +27,18 @@ function update_script() {
     msg_error "No ${APP} Installation Found!"
     exit
   fi
-  RELEASE=$(curl -s https://api.github.com/repos/thomiceli/opengist/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+  RELEASE=$(curl -fsSL https://api.github.com/repos/thomiceli/opengist/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
   if [[ ! -f /opt/${APP}_version.txt ]] || [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]]; then
     msg_info "Stopping Service"
     systemctl stop opengist.service
     msg_ok "Stopped Service"
-    
+
     msg_info "Updating ${APP} to v${RELEASE}"
-    apt-get update &>/dev/null
-    apt-get -y upgrade &>/dev/null
+    $STD apt-get update
+    $STD apt-get -y upgrade
     cd /opt
     mv /opt/opengist /opt/opengist-backup
-    wget -q "https://github.com/thomiceli/opengist/releases/download/v${RELEASE}/opengist${RELEASE}-linux-amd64.tar.gz"
+    curl -fsSL "https://github.com/thomiceli/opengist/releases/download/v${RELEASE}/opengist${RELEASE}-linux-amd64.tar.gz" -o $(basename "https://github.com/thomiceli/opengist/releases/download/v${RELEASE}/opengist${RELEASE}-linux-amd64.tar.gz")
     tar -xzf opengist${RELEASE}-linux-amd64.tar.gz
     mv /opt/opengist-backup/config.yml /opt/opengist/config.yml
     chmod +x /opt/opengist/opengist
@@ -57,8 +52,8 @@ function update_script() {
     msg_info "Cleaning up"
     rm -rf /opt/opengist${RELEASE}-linux-amd64.tar.gz
     rm -rf /opt/opengist-backup
-    apt-get -y autoremove &>/dev/null
-    apt-get -y autoclean &>/dev/null
+    $STD apt-get -y autoremove
+    $STD apt-get -y autoclean
     msg_ok "Cleaned"
     msg_ok "Updated Successfully"
   else

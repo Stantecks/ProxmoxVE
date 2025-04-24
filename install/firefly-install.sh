@@ -2,8 +2,8 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: quantumryuu
-# License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# Source: https://firefly-iii.org/
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
@@ -14,11 +14,7 @@ network_check
 update_os
 
 msg_info "Installing Dependencies"
-$STD apt-get install -y \
-    curl \
-    mc \
-    sudo
-curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg
+curl -fsSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg
 echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ bookworm main" >/etc/apt/sources.list.d/php.list
 $STD apt-get update
 $STD apt-get install -y \
@@ -42,13 +38,13 @@ mysql -u root -e "GRANT ALL ON $DB_NAME.* TO '$DB_USER'@'localhost'; FLUSH PRIVI
     echo "Firefly Database User: $DB_USER"
     echo "Firefly Database Password: $DB_PASS"
     echo "Firefly Database Name: $DB_NAME"
-} >> ~/firefly.creds
+} >>~/firefly.creds
 msg_ok "Set up database"
 
 msg_info "Installing Firefly III (Patience)"
-RELEASE=$(curl -s https://api.github.com/repos/firefly-iii/firefly-iii/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4)}')
+RELEASE=$(curl -fsSL https://api.github.com/repos/firefly-iii/firefly-iii/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4)}')
 cd /opt
-wget -q "https://github.com/firefly-iii/firefly-iii/releases/download/v${RELEASE}/FireflyIII-v${RELEASE}.tar.gz"
+curl -fsSL "https://github.com/firefly-iii/firefly-iii/releases/download/v${RELEASE}/FireflyIII-v${RELEASE}.tar.gz" -o $(basename "https://github.com/firefly-iii/firefly-iii/releases/download/v${RELEASE}/FireflyIII-v${RELEASE}.tar.gz")
 mkdir -p /opt/firefly
 tar -xzf FireflyIII-v${RELEASE}.tar.gz -C /opt/firefly
 chown -R www-data:www-data /opt/firefly
@@ -57,7 +53,7 @@ cd /opt/firefly
 cp .env.example .env
 sed -i "s/DB_HOST=.*/DB_HOST=localhost/" /opt/firefly/.env
 sed -i "s/DB_PASSWORD=.*/DB_PASSWORD=$DB_PASS/" /opt/firefly/.env
-echo "export COMPOSER_ALLOW_SUPERUSER=1" >> ~/.bashrc
+echo "export COMPOSER_ALLOW_SUPERUSER=1" >>~/.bashrc
 source ~/.bashrc
 $STD composer install --no-dev --no-plugins --no-interaction
 $STD php artisan firefly:upgrade-database
@@ -84,10 +80,11 @@ cat <<EOF >/etc/apache2/sites-available/firefly.conf
 
 </VirtualHost>
 EOF
+chown www-data:www-data /opt/firefly/storage/oauth-*.key
 $STD a2enmod php8.4
 $STD a2enmod rewrite
 $STD a2ensite firefly.conf
-$STD a2dissite 000-default.conf  
+$STD a2dissite 000-default.conf
 $STD systemctl reload apache2
 msg_ok "Created Service"
 

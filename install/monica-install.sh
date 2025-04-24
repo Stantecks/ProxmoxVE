@@ -3,8 +3,9 @@
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: bvdberg01
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# Source: https://www.monicahq.com/
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
 catch_errors
@@ -14,15 +15,11 @@ update_os
 
 msg_info "Installing Dependencies"
 $STD apt-get install -y \
-  curl \
-  sudo \
-  mc \
-  gnupg2\
-  mariadb-server \
-  apache2 \
-  libapache2-mod-php \
-  php-{bcmath,curl,dom,gd,gmp,iconv,intl,json,mbstring,mysqli,opcache,pdo-mysql,redis,tokenizer,xml,zip} \
-  composer
+    gnupg2 mariadb-server \
+    apache2 \
+    libapache2-mod-php \
+    php-{bcmath,curl,dom,gd,gmp,iconv,intl,json,mbstring,mysqli,opcache,pdo-mysql,redis,tokenizer,xml,zip} \
+    composer
 msg_ok "Installed Dependencies"
 
 msg_info "Setting up MariaDB"
@@ -37,7 +34,7 @@ $STD mysql -u root -e "GRANT ALL ON $DB_NAME.* TO '$DB_USER'@'localhost'; FLUSH 
     echo "monica Database User: $DB_USER"
     echo "monica Database Password: $DB_PASS"
     echo "monica Database Name: $DB_NAME"
-} >> ~/monica.creds
+} >>~/monica.creds
 msg_ok "Set up MariaDB"
 
 msg_info "Setting up Node.js/Yarn"
@@ -51,18 +48,18 @@ $STD npm install -g yarn
 msg_ok "Installed Node.js/Yarn"
 
 msg_info "Installing monica"
-RELEASE=$(curl -s https://api.github.com/repos/monicahq/monica/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+RELEASE=$(curl -fsSL https://api.github.com/repos/monicahq/monica/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
 cd /opt
-wget -q "https://github.com/monicahq/monica/releases/download/v${RELEASE}/monica-v${RELEASE}.tar.bz2"
+curl -fsSL "https://github.com/monicahq/monica/releases/download/v${RELEASE}/monica-v${RELEASE}.tar.bz2" -o $(basename "https://github.com/monicahq/monica/releases/download/v${RELEASE}/monica-v${RELEASE}.tar.bz2")
 tar -xjf "monica-v${RELEASE}.tar.bz2"
 mv "/opt/monica-v${RELEASE}" /opt/monica
 cd /opt/monica
 cp /opt/monica/.env.example /opt/monica/.env
 HASH_SALT=$(openssl rand -base64 32)
 sed -i -e "s|^DB_USERNAME=.*|DB_USERNAME=${DB_USER}|" \
-       -e "s|^DB_PASSWORD=.*|DB_PASSWORD=${DB_PASS}|" \
-       -e "s|^HASH_SALT=.*|HASH_SALT=${HASH_SALT}|" \
-       /opt/monica/.env
+    -e "s|^DB_PASSWORD=.*|DB_PASSWORD=${DB_PASS}|" \
+    -e "s|^HASH_SALT=.*|HASH_SALT=${HASH_SALT}|" \
+    /opt/monica/.env
 $STD composer install --no-dev -o --no-interaction
 $STD yarn install
 $STD yarn run production

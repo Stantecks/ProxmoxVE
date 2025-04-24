@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: CrazyWolf13
-# License: MIT
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: Proxmox Server Solution GmbH
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
@@ -14,11 +14,7 @@ network_check
 update_os
 
 msg_info "Installing Dependencies"
-$STD apt-get install -y \
-    curl \
-    sudo \
-    gpg \
-    mc 
+$STD apt-get install -y gpg
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Proxmox Datacenter Manager"

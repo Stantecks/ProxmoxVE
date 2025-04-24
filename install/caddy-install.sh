@@ -3,8 +3,9 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster) | Co-Author: MickLesk (CanbiZ)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# Source: https://caddyserver.com/
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
 catch_errors
@@ -17,10 +18,7 @@ $STD apt-get install -y \
   debian-keyring \
   debian-archive-keyring \
   apt-transport-https \
-  gpg \
-  curl \
-  sudo \
-  mc
+  gpg
 msg_ok "Installed Dependencies"
 
 msg_info "Installing Caddy"
@@ -33,20 +31,21 @@ msg_ok "Installed Caddy"
 read -r -p "Would you like to install xCaddy Addon? <y/N> " prompt
 if [[ "${prompt,,}" =~ ^(y|yes)$ ]]; then
   msg_info "Installing Golang"
-  cd /opt
   set +o pipefail
-  GOLANG=$(curl -s https://go.dev/dl/ | grep -o "go.*\linux-amd64.tar.gz" | head -n 1)
-  wget -q https://golang.org/dl/$GOLANG
-  tar -xzf $GOLANG -C /usr/local
-  ln -s /usr/local/go/bin/go /usr/local/bin/go
+  temp_file=$(mktemp)
+  golang_tarball=$(curl -fsSL https://go.dev/dl/ | grep -oP 'go[\d\.]+\.linux-amd64\.tar\.gz' | head -n 1)
+  curl -fsSL "https://golang.org/dl/${golang_tarball}" -o "$temp_file"
+  tar -C /usr/local -xzf "$temp_file"
+  ln -sf /usr/local/go/bin/go /usr/local/bin/go
+  rm -f "$temp_file"
   set -o pipefail
-  rm -rf /opt/go*
   msg_ok "Installed Golang"
-	
+
   msg_info "Setup xCaddy"
+  $STD apt-get install -y git
   cd /opt
-  RELEASE=$(curl -s https://api.github.com/repos/caddyserver/xcaddy/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
-  wget -q https://github.com/caddyserver/xcaddy/releases/download/${RELEASE}/xcaddy_${RELEASE:1}_linux_amd64.deb
+  RELEASE=$(curl -fsSL https://api.github.com/repos/caddyserver/xcaddy/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+  curl -fsSL "https://github.com/caddyserver/xcaddy/releases/download/${RELEASE}/xcaddy_${RELEASE:1}_linux_amd64.deb" -o $(basename "https://github.com/caddyserver/xcaddy/releases/download/${RELEASE}/xcaddy_${RELEASE:1}_linux_amd64.deb")
   $STD dpkg -i xcaddy_${RELEASE:1}_linux_amd64.deb
   rm -rf /opt/xcaddy*
   $STD xcaddy build

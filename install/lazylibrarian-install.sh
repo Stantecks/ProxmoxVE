@@ -3,10 +3,10 @@
 # Copyright (c) 2021-2025 tteck
 # Author: tteck
 # Co-Author: MountyMapleSyrup (MountyMapleSyrup)
-# License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# Source: https://gitlab.com/LazyLibrarian/LazyLibrarian
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
 catch_errors
@@ -16,9 +16,6 @@ update_os
 
 msg_info "Installing Dependencies"
 $STD apt-get install -y \
-    curl \
-    sudo \
-    mc \
     git \
     libpng-dev \
     libjpeg-dev \
@@ -26,7 +23,7 @@ $STD apt-get install -y \
     imagemagick
 msg_ok "Installed Dependencies"
 
-msg_info "Installing Python3 Dependencies"
+msg_info "Setup Python3"
 $STD apt-get install -y \
     pip \
     python3-irc
@@ -34,7 +31,7 @@ $STD pip install jaraco.stream
 $STD pip install python-Levenshtein
 $STD pip install soupsieve
 $STD pip install pypdf
-msg_ok "Installed Python3 Dependencies"
+msg_ok "Setup Python3"
 
 msg_info "Installing LazyLibrarian"
 $STD git clone https://gitlab.com/LazyLibrarian/LazyLibrarian /opt/LazyLibrarian

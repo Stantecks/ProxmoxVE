@@ -1,25 +1,20 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://www.zigbee2mqtt.io/
 
-# App Default Values
 APP="Zigbee2MQTT"
-var_tags="smarthome;zigbee;mqtt"
-var_cpu="2"
-var_ram="1024"
-var_disk="4"
-var_os="debian"
-var_version="12"
-var_unprivileged="0"
+var_tags="${var_tags:-smarthome;zigbee;mqtt}"
+var_cpu="${var_cpu:-2}"
+var_ram="${var_ram:-1024}"
+var_disk="${var_disk:-4}"
+var_os="${var_os:-debian}"
+var_version="${var_version:-12}"
+var_unprivileged="${var_unprivileged:-0}"
 
-# App Output & Base Settings
 header_info "$APP"
-base_settings
-
-# Core
 variables
 color
 catch_errors
@@ -32,31 +27,44 @@ function update_script() {
     msg_error "No ${APP} Installation Found!"
     exit
   fi
-  RELEASE=$(curl -s https://api.github.com/repos/Koenkk/zigbee2mqtt/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+  RELEASE=$(curl -fsSL https://api.github.com/repos/Koenkk/zigbee2mqtt/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
   if [[ ! -f /opt/${APP}_version.txt ]] || [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]]; then
     msg_info "Stopping Service"
     systemctl stop zigbee2mqtt
     msg_ok "Stopped Service"
 
+    msg_info "Updating pnpm"
+    $STD npm install -g pnpm@10.4.1
+    msg_ok "Updated pnpm"
+
     msg_info "Creating Backup"
+    rm -rf /opt/${APP}_backup*.tar.gz
     mkdir -p /opt/z2m_backup
-    tar -czf /opt/z2m_backup/${APP}_backup_$(date +%Y%m%d%H%M%S).tar.gz -C /opt zigbee2mqtt &>/dev/null
+    $STD tar -czf /opt/z2m_backup/${APP}_backup_$(date +%Y%m%d%H%M%S).tar.gz -C /opt zigbee2mqtt
     mv /opt/zigbee2mqtt/data /opt/z2m_backup
     msg_ok "Backup Created"
 
     msg_info "Updating ${APP} to v${RELEASE}"
     cd /opt
-    wget -q "https://github.com/Koenkk/zigbee2mqtt/archive/refs/tags/${RELEASE}.zip"
+    curl -fsSL "https://github.com/Koenkk/zigbee2mqtt/archive/refs/tags/${RELEASE}.zip" -o $(basename "https://github.com/Koenkk/zigbee2mqtt/archive/refs/tags/${RELEASE}.zip")
     unzip -q ${RELEASE}.zip
+    rm -rf /opt/zigbee2mqtt
     mv zigbee2mqtt-${RELEASE} /opt/zigbee2mqtt
     rm -rf /opt/zigbee2mqtt/data
     mv /opt/z2m_backup/data /opt/zigbee2mqtt
-    cd /opt/zigbee2mqtt 
-    pnpm install --frozen-lockfile &>/dev/null
-    pnpm build &>/dev/null
+    cd /opt/zigbee2mqtt
+    $STD pnpm install --frozen-lockfile
+    $STD pnpm build
+    msg_ok "Updated Zigbee2MQTT"
+
     msg_info "Starting Service"
     systemctl start zigbee2mqtt
     msg_ok "Started Service"
+
+    msg_info "Cleaning up"
+    rm -rf /opt/z2m_backup
+    rm -rf /opt/${RELEASE}.zip
+    msg_ok "Cleaned up"
     echo "${RELEASE}" >/opt/${APP}_version.txt
   else
     msg_ok "No update required. ${APP} is already at v${RELEASE}."

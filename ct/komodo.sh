@@ -1,25 +1,20 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: MickLesk
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://komo.do
 
-# App Default Values
 APP="Komodo"
-var_tags="docker"
-var_cpu="2"
-var_ram="2048"
-var_disk="10"
-var_os="debian"
-var_version="12"
-var_unprivileged="1"
+var_tags="${var_tags:-docker}"
+var_cpu="${var_cpu:-2}"
+var_ram="${var_ram:-2048}"
+var_disk="${var_disk:-10}"
+var_os="${var_os:-debian}"
+var_version="${var_version:-12}"
+var_unprivileged="${var_unprivileged:-1}"
 
-# App Output & Base Settings
 header_info "$APP"
-base_settings
-
-# Core
 variables
 color
 catch_errors
@@ -52,14 +47,14 @@ function update_script() {
         exit 1
     }
 
-    GITHUB_URL="https://raw.githubusercontent.com/mbecker20/komodo/main/compose/${COMPOSE_FILE}"
-    wget -q -O "/opt/komodo/${COMPOSE_FILE}" "$GITHUB_URL" || {
+    GITHUB_URL="https://raw.githubusercontent.com/moghtech/komodo/main/compose/${COMPOSE_FILE}"
+    if ! curl -fsSL "$GITHUB_URL" -o "/opt/komodo/${COMPOSE_FILE}"; then
         msg_error "Failed to download ${COMPOSE_FILE} from GitHub!"
-        mv "/opt/komodo/${BACKUP_FILE}" "/opt/komodo/${COMPOSE_FILE}" 
+        mv "/opt/komodo/${BACKUP_FILE}" "/opt/komodo/${COMPOSE_FILE}"
         exit 1
-    }
+    fi
 
-    docker compose -p komodo -f "/opt/komodo/$COMPOSE_FILE" --env-file /opt/komodo/compose.env up -d &>/dev/null 
+    $STD docker compose -p komodo -f "/opt/komodo/$COMPOSE_FILE" --env-file /opt/komodo/compose.env up -d
     msg_ok "Updated ${APP}"
 }
 

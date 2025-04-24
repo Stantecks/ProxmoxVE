@@ -1,25 +1,20 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: tteck (tteckster) | Co-Author: MickLesk (CanbiZ)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://www.home-assistant.io/
 
-# App Default Values
 APP="Home Assistant-Core"
-var_tags="automation;smarthome"
-var_cpu="2"
-var_ram="2048"
-var_disk="10"
-var_os="ubuntu"
-var_version="24.10"
-var_unprivileged="1"
+var_tags="${var_tags:-automation;smarthome}"
+var_cpu="${var_cpu:-2}"
+var_ram="${var_ram:-2048}"
+var_disk="${var_disk:-10}"
+var_os="${var_os:-ubuntu}"
+var_version="${var_version:-24.10}"
+var_unprivileged="${var_unprivileged:-1}"
 
-# App Output & Base Settings
 header_info "$APP"
-base_settings
-
-# Core
 variables
 color
 catch_errors
@@ -64,7 +59,7 @@ function update_script() {
 
     msg_info "Updating Home Assistant"
     source /srv/homeassistant/bin/activate
-    pip install ${BR}--upgrade homeassistant &>/dev/null
+    $STD pip install ${BR}--upgrade homeassistant
     msg_ok "Updated Home Assistant"
 
     msg_info "Starting Home Assistant"
@@ -77,10 +72,10 @@ function update_script() {
   fi
   if [ "$UPD" == "2" ]; then
     msg_info "Installing Home Assistant Community Store (HACS)"
-    apt update &>/dev/null
-    apt install -y unzip &>/dev/null
+    $STD apt update
+    $STD apt install -y unzip
     cd .homeassistant
-    bash <(curl -fsSL https://get.hacs.xyz) &>/dev/null
+    $STD bash <(curl -fsSL https://get.hacs.xyz)
     msg_ok "Installed Home Assistant Community Store (HACS)"
     echo -e "\n Reboot Home Assistant and clear browser cache then Add HACS integration.\n"
     exit
@@ -90,22 +85,22 @@ function update_script() {
     read -r -p "Would you like to use No Authentication? <y/N> " prompt
     msg_info "Installing FileBrowser"
     RELEASE=$(curl -fsSL https://api.github.com/repos/filebrowser/filebrowser/releases/latest | grep -o '"tag_name": ".*"' | sed 's/"//g' | sed 's/tag_name: //g')
-    curl -fsSL https://github.com/filebrowser/filebrowser/releases/download/$RELEASE/linux-amd64-filebrowser.tar.gz | tar -xzv -C /usr/local/bin &>/dev/null
+    $STD curl -fsSL https://github.com/filebrowser/filebrowser/releases/download/$RELEASE/linux-amd64-filebrowser.tar.gz | tar -xzv -C /usr/local/bin
 
     if [[ "${prompt,,}" =~ ^(y|yes)$ ]]; then
-      filebrowser config init -a '0.0.0.0' &>/dev/null
-      filebrowser config set -a '0.0.0.0' &>/dev/null
-      filebrowser config set --auth.method=noauth &>/dev/null
-      filebrowser users add ID 1 --perm.admin &>/dev/null
+      $STD filebrowser config init -a '0.0.0.0'
+      $STD filebrowser config set -a '0.0.0.0'
+      $STD filebrowser config set --auth.method=noauth
+      $STD filebrowser users add ID 1 --perm.admin
     else
-      filebrowser config init -a '0.0.0.0' &>/dev/null
-      filebrowser config set -a '0.0.0.0' &>/dev/null
-      filebrowser users add admin helper-scripts.com --perm.admin &>/dev/null
+      $STD filebrowser config init -a '0.0.0.0'
+      $STD filebrowser config set -a '0.0.0.0'
+      $STD filebrowser users add admin helper-scripts.com --perm.admin
     fi
     msg_ok "Installed FileBrowser"
 
     msg_info "Creating Service"
-    cat <<EOF > /etc/systemd/system/filebrowser.service
+    cat <<EOF >/etc/systemd/system/filebrowser.service
 [Unit]
 Description=Filebrowser
 After=network-online.target

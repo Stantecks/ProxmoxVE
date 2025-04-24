@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-#Copyright (c) 2021-2025 community-scripts ORG
+# Copyright (c) 2021-2025 community-scripts ORG
 # Author: Michel Roegl-Brunner (michelroegl-brunner)
-# License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# Source: https://zammad.com
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
@@ -15,14 +15,11 @@ update_os
 
 msg_info "Installing Dependencies"
 $STD apt-get install -y \
-  curl \
   git \
-  sudo \
   gpg \
-  wget \
   nginx \
   apt-transport-https \
-  gnupg 
+  gnupg
 msg_ok "Installed Dependencies"
 
 msg_info "Setting up Elasticsearch"

@@ -2,10 +2,10 @@
 
 # Copyright (c) 2021-2025 community-scripts ORG
 # Author: bvdberg01
-# License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# Source: https://docs.part-db.de/
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
 catch_errors
@@ -15,10 +15,6 @@ update_os
 
 msg_info "Installing Dependencies"
 $STD apt-get install -y \
-  curl \
-  sudo \
-  mc \
-  zip \
   ca-certificates \
   software-properties-common \
   apt-transport-https \
@@ -29,6 +25,12 @@ $STD apt-get install -y \
   postgresql
 msg_ok "Installed Dependencies"
 
+msg_info "Setting up PHP"
+PHPVER=$(php -r 'echo PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION . "\n";')
+sed -i "s@post_max_size = 8M@post_max_size = 100M@g" /etc/php/${PHPVER}/apache2/php.ini
+sed -i "s@upload_max_filesize = 2M@upload_max_filesize = 100M@g" /etc/php/${PHPVER}/apache2/php.ini
+msg_ok "Setting up PHP"
+
 msg_info "Setting up PostgreSQL"
 DB_NAME=partdb
 DB_USER=partdb
@@ -36,17 +38,17 @@ DB_PASS=$(openssl rand -base64 18 | tr -dc 'a-zA-Z0-9' | cut -c1-13)
 $STD sudo -u postgres psql -c "CREATE ROLE $DB_USER WITH LOGIN PASSWORD '$DB_PASS';"
 $STD sudo -u postgres psql -c "CREATE DATABASE $DB_NAME WITH OWNER $DB_USER TEMPLATE template0;"
 {
-echo "Part-DB Credentials"
-echo "Part-DB Database User: $DB_USER"
-echo "Part-DB Database Password: $DB_PASS"
-echo "Part-DB Database Name: $DB_NAME"
-} >> ~/partdb.creds
+  echo "Part-DB Credentials"
+  echo "Part-DB Database User: $DB_USER"
+  echo "Part-DB Database Password: $DB_PASS"
+  echo "Part-DB Database Name: $DB_NAME"
+} >>~/partdb.creds
 msg_ok "Set up PostgreSQL"
 
 msg_info "Setting up Node.js/Yarn"
 mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" >/etc/apt/sources.list.d/nodesource.list
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" >/etc/apt/sources.list.d/nodesource.list
 $STD apt-get update
 $STD apt-get install -y nodejs
 $STD npm install -g npm@latest
@@ -55,8 +57,8 @@ msg_ok "Installed Node.js/Yarn"
 
 msg_info "Installing Part-DB (Patience)"
 cd /opt
-RELEASE=$(curl -s https://api.github.com/repos/Part-DB/Part-DB-server/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
-wget -q "https://github.com/Part-DB/Part-DB-server/archive/refs/tags/v${RELEASE}.zip"
+RELEASE=$(curl -fsSL https://api.github.com/repos/Part-DB/Part-DB-server/releases/latest | grep "tag_name" | awk '{print substr($2, 3, length($2)-4) }')
+curl -fsSL "https://github.com/Part-DB/Part-DB-server/archive/refs/tags/v${RELEASE}.zip" -o $(basename "https://github.com/Part-DB/Part-DB-server/archive/refs/tags/v${RELEASE}.zip")
 unzip -q "v${RELEASE}.zip"
 mv /opt/Part-DB-server-${RELEASE}/ /opt/partdb
 
@@ -69,14 +71,14 @@ $STD composer install --no-dev -o --no-interaction
 $STD yarn install
 $STD yarn build
 $STD php bin/console cache:clear
-php bin/console doctrine:migrations:migrate -n > ~/database-migration-output
+php bin/console doctrine:migrations:migrate -n >~/database-migration-output
 chown -R www-data:www-data /opt/partdb
 ADMIN_PASS=$(grep -oP 'The initial password for the "admin" user is: \K\w+' ~/database-migration-output)
 {
-echo ""
-echo "Part-DB Admin User: admin"
-echo "Part-DB Admin Password: $ADMIN_PASS"
-} >> ~/partdb.creds
+  echo ""
+  echo "Part-DB Admin User: admin"
+  echo "Part-DB Admin Password: $ADMIN_PASS"
+} >>~/partdb.creds
 echo "${RELEASE}" >/opt/${APPLICATION}_version.txt
 msg_ok "Installed Part-DB"
 

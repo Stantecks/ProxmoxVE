@@ -5,6 +5,8 @@
 # License: MIT
 # https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 
+source /dev/stdin <<<$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/api.func)
+
 function header_info {
   cat <<"EOF"
                                       ____  _ __  ___                                        
@@ -22,12 +24,20 @@ EOF
 clear
 header_info
 echo -e "Loading..."
+#API VARIABLES
+RANDOM_UUID="$(cat /proc/sys/kernel/random/uuid)"
+METHOD=""
+NSAPP="pimox-haos-vm"
+var_os="pimox-haos"
+var_version=" "
+DISK_SIZE="32G"
+#
 GEN_MAC=$(echo '00 60 2f'$(od -An -N3 -t xC /dev/urandom) | sed -e 's/ /:/g' | tr '[:lower:]' '[:upper:]')
 USEDID=$(pvesh get /cluster/resources --type vm --output-format yaml | egrep -i 'vmid' | awk '{print substr($2, 1, length($2)-0) }')
 NEXTID=$(pvesh get /cluster/nextid)
-STABLE=$(curl -s https://raw.githubusercontent.com/home-assistant/version/master/stable.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
-BETA=$(curl -s https://raw.githubusercontent.com/home-assistant/version/master/beta.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
-DEV=$(curl -s https://raw.githubusercontent.com/home-assistant/version/master/dev.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
+STABLE=$(curl -fsSL https://raw.githubusercontent.com/home-assistant/version/master/stable.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
+BETA=$(curl -fsSL https://raw.githubusercontent.com/home-assistant/version/master/beta.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
+DEV=$(curl -fsSL https://raw.githubusercontent.com/home-assistant/version/master/dev.json | grep "ova" | awk '{print substr($2, 2, length($2)-3) }')
 YW=$(echo "\033[33m")
 BL=$(echo "\033[36m")
 HA=$(echo "\033[1;34m")
@@ -48,11 +58,14 @@ shopt -s expand_aliases
 alias die='EXIT=$? LINE=$LINENO error_exit'
 trap die ERR
 trap cleanup EXIT
+trap 'post_update_to_api "failed" "INTERRUPTED"' SIGINT
+trap 'post_update_to_api "failed" "TERMINATED"' SIGTERM
 function error_exit() {
   trap - ERR
   local reason="Unknown failure occurred."
   local msg="${1:-$reason}"
   local flag="${RD}‼ ERROR ${CL}$EXIT@$LINE"
+  post_update_to_api "failed" "unknown"
   echo -e "$flag $msg" 1>&2
   [ ! -z ${VMID-} ] && cleanup_vmid
   exit $EXIT
@@ -71,10 +84,10 @@ function cleanup() {
 }
 TEMP_DIR=$(mktemp -d)
 pushd $TEMP_DIR >/dev/null
-if ! command -v whiptail &> /dev/null; then
-    echo "Installing whiptail..."
-    apt-get update &>/dev/null
-    apt-get install -y whiptail &>/dev/null
+if ! command -v whiptail &>/dev/null; then
+  echo "Installing whiptail..."
+  apt-get update &>/dev/null
+  apt-get install -y whiptail &>/dev/null
 fi
 if (whiptail --backtitle "Proxmox VE Helper Scripts" --title "PiMox HAOS VM" --yesno "This will create a New PiMox HAOS VM. Proceed?" 10 58); then
   echo "User selected Yes"
@@ -106,6 +119,7 @@ function msg_error() {
 }
 
 function default_settings() {
+  METHOD="default"
   echo -e "${DGN}Using HAOS Version: ${BGN}${STABLE}${CL}"
   BRANCH=${STABLE}
   echo -e "${DGN}Using Virtual Machine ID: ${BGN}$NEXTID${CL}"
@@ -129,6 +143,7 @@ function default_settings() {
   echo -e "${BL}Creating a HAOS VM using the above default settings${CL}"
 }
 function advanced_settings() {
+  METHOD="advanced"
   BRANCH=$(whiptail --backtitle "Proxmox VE Helper Scripts" --title "HAOS VERSION" --radiolist "Choose Version" --cancel-button Exit-Script 10 58 3 \
     "$STABLE" "Stable" ON \
     "$BETA" "Beta" OFF \
@@ -250,6 +265,7 @@ function START_SCRIPT() {
 }
 ARCH_CHECK
 START_SCRIPT
+post_to_api_vm
 while read -r line; do
   TAG=$(echo $line | awk '{print $1}')
   TYPE=$(echo $line | awk '{printf "%-10s", $2}')
@@ -269,9 +285,9 @@ elif [ $((${#STORAGE_MENU[@]} / 3)) -eq 1 ]; then
 else
   while [ -z "${STORAGE:+x}" ]; do
     STORAGE=$(whiptail --backtitle "Proxmox VE Helper Scripts" --title "Storage Pools" --radiolist \
-      "Which storage pool you would like to use for the HAOS VM?\n\n" \
+      "Which storage pool would you like to use for the HAOS VM?\n\n" \
       16 $(($MSG_MAX_LENGTH + 23)) 6 \
-      "${STORAGE_MENU[@]}" 3>&1 1>&2 2>&3) || exit
+      "${STORAGE_MENU[@]}" 3>&1 1>&2 2>&3)
   done
 fi
 msg_ok "Using ${CL}${BL}$STORAGE${CL} ${GN}for Storage Location."
@@ -280,7 +296,7 @@ msg_info "Getting URL for Home Assistant ${BRANCH} Disk Image"
 URL=https://github.com/home-assistant/operating-system/releases/download/${BRANCH}/haos_generic-aarch64-${BRANCH}.qcow2.xz
 sleep 2
 msg_ok "${CL}${BL}${URL}${CL}"
-wget -q --show-progress $URL
+curl -f#SL -o "$(basename "$URL")" "$URL"
 echo -en "\e[1A\e[0K"
 FILE=$(basename $URL)
 msg_ok "Downloaded ${CL}${BL}haos_generic-aarch64-${BRANCH}.qcow2.xz${CL}"
@@ -322,4 +338,5 @@ if [ "$START_VM" == "yes" ]; then
   qm start $VMID
   msg_ok "Started Home Assistant OS VM"
 fi
+post_update_to_api "done" "none"
 msg_ok "Completed Successfully!\n"

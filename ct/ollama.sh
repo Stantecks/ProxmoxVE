@@ -1,24 +1,19 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck | Co-Author: havardthom
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://ollama.com/
 
-# App Default Values
 APP="Ollama"
-var_tags="ai"
-var_cpu="4"
-var_ram="4096"
-var_disk="24"
-var_os="ubuntu"
-var_version="22.04"
+var_tags="${var_tags:-ai}"
+var_cpu="${var_cpu:-4}"
+var_ram="${var_ram:-4096}"
+var_disk="${var_disk:-24}"
+var_os="${var_os:-ubuntu}"
+var_version="${var_version:-22.04}"
 
-# App Output & Base Settings
 header_info "$APP"
-base_settings
-
-# Core
 variables
 color
 catch_errors
@@ -32,8 +27,8 @@ function update_script() {
         exit
     fi
     msg_info "Updating ${APP}"
-    apt-get update &>/dev/null
-    apt-get -y upgrade &>/dev/null
+    $STD apt-get update
+    $STD apt-get -y upgrade
     msg_ok "Updated Successfully"
     exit
 }

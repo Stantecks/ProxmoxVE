@@ -13,9 +13,1698 @@ Exercise vigilance regarding copycat or coat-tailing sites that seek to exploit 
 > [!NOTE]
 All LXC instances created using this repository come pre-installed with Midnight Commander, which is a command-line tool (`mc`) that offers a user-friendly file and directory management interface for the terminal environment.
 
-> [!IMPORTANT]
-Do not break established syntax in this file, as it is automatically updated by a Github Workflow
 
+## 2025-04-23
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Zipline: Add new ENV Variable and Change Update [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3997](https://github.com/community-scripts/ProxmoxVE/pull/3997))
+    - karakeep: use nightly channel for yt-dlp [@vhsdream](https://github.com/vhsdream) ([#3992](https://github.com/community-scripts/ProxmoxVE/pull/3992))
+
+### 🧰 Maintenance
+
+  - #### 📂 Github
+
+    - Fix Workflow to close discussions [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3999](https://github.com/community-scripts/ProxmoxVE/pull/3999))
+
+## 2025-04-22
+
+### 🆕 New Scripts
+
+  - reactive-resume ([#3980](https://github.com/community-scripts/ProxmoxVE/pull/3980))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - wger: Fix a bug in update procedure and general code maintenance [@tremor021](https://github.com/tremor021) ([#3974](https://github.com/community-scripts/ProxmoxVE/pull/3974))
+
+### 🧰 Maintenance
+
+  - #### 📂 Github
+
+    - Add workflow to close ttek Repo relatate issues [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3981](https://github.com/community-scripts/ProxmoxVE/pull/3981))
+
+### 🌐 Website
+
+  - #### 🐞 Bug Fixes
+
+    - Fix Turnkey Source Link in Button Component [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3978](https://github.com/community-scripts/ProxmoxVE/pull/3978))
+
+  - #### 📝 Script Information
+
+    - qBittorrent: Update web page [@tremor021](https://github.com/tremor021) ([#3969](https://github.com/community-scripts/ProxmoxVE/pull/3969))
+
+## 2025-04-19
+
+### 🆕 New Scripts
+
+  - LXC Iptag [@DesertGamer](https://github.com/DesertGamer) ([#3531](https://github.com/community-scripts/ProxmoxVE/pull/3531))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - seelf: Add missing gpg dependency [@tremor021](https://github.com/tremor021) ([#3953](https://github.com/community-scripts/ProxmoxVE/pull/3953))
+
+### 🌐 Website
+
+  - #### 📝 Script Information
+
+    - Tailscale: Clarify tailscale script instruction on website [@tremor021](https://github.com/tremor021) ([#3952](https://github.com/community-scripts/ProxmoxVE/pull/3952))
+
+## 2025-04-18
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Changedetection: Increase connection timeout for older systems [@tremor021](https://github.com/tremor021) ([#3935](https://github.com/community-scripts/ProxmoxVE/pull/3935))
+
+### 🌐 Website
+
+  - #### 📝 Script Information
+
+    - VaultWarden: Update json with additonal information [@uSlackr](https://github.com/uSlackr) ([#3929](https://github.com/community-scripts/ProxmoxVE/pull/3929))
+
+## 2025-04-17
+
+### 🚀 Updated Scripts
+
+  - fix minor grammatical error in several scripts [@jordanpatton](https://github.com/jordanpatton) ([#3921](https://github.com/community-scripts/ProxmoxVE/pull/3921))
+
+  - #### 🐞 Bug Fixes
+
+    - PeaNUT: Fix tar command [@tremor021](https://github.com/tremor021) ([#3925](https://github.com/community-scripts/ProxmoxVE/pull/3925))
+    - GoMFT: Fix install and update process (final time) [@tremor021](https://github.com/tremor021) ([#3922](https://github.com/community-scripts/ProxmoxVE/pull/3922))
+
+## 2025-04-15
+
+### 🚀 Updated Scripts
+
+  - [core] remove unneeded vars from shellcheck [@MickLesk](https://github.com/MickLesk) ([#3899](https://github.com/community-scripts/ProxmoxVE/pull/3899))
+
+  - #### 🐞 Bug Fixes
+
+    - Outline: Installation and update fixes [@tremor021](https://github.com/tremor021) ([#3895](https://github.com/community-scripts/ProxmoxVE/pull/3895))
+    - SABnzbd: Fix update error caused by externaly managed message [@tremor021](https://github.com/tremor021) ([#3892](https://github.com/community-scripts/ProxmoxVE/pull/3892))
+
+### 🧰 Maintenance
+
+  - #### 📡 API
+
+    - Bump golang.org/x/crypto from 0.32.0 to 0.35.0 in /api [@dependabot[bot]](https://github.com/dependabot[bot]) ([#3887](https://github.com/community-scripts/ProxmoxVE/pull/3887))
+
+  - #### 📂 Github
+
+    - shrink & minimalize report templates [@MickLesk](https://github.com/MickLesk) ([#3902](https://github.com/community-scripts/ProxmoxVE/pull/3902))
+
+## 2025-04-14
+
+### 🆕 New Scripts
+
+  - openziti-controller ([#3880](https://github.com/community-scripts/ProxmoxVE/pull/3880))
+- Alpine-AdGuardHome [@MickLesk](https://github.com/MickLesk) ([#3875](https://github.com/community-scripts/ProxmoxVE/pull/3875))
+
+### 🚀 Updated Scripts
+
+  - Paymenter: bump php to 8.3 [@opastorello](https://github.com/opastorello) ([#3825](https://github.com/community-scripts/ProxmoxVE/pull/3825))
+
+  - #### 🐞 Bug Fixes
+
+    - Neo4j: Add Java dependency [@tremor021](https://github.com/tremor021) ([#3871](https://github.com/community-scripts/ProxmoxVE/pull/3871))
+
+  - #### 🔧 Refactor
+
+    - Refactor Cockpit update_script part [@MickLesk](https://github.com/MickLesk) ([#3878](https://github.com/community-scripts/ProxmoxVE/pull/3878))
+
+## 2025-04-12
+
+### 🌐 Website
+
+  - #### ✨ New Features
+
+    - Add "Not Updateable" tooltip to scripts [@BramSuurdje](https://github.com/BramSuurdje) ([#3852](https://github.com/community-scripts/ProxmoxVE/pull/3852))
+
+## 2025-04-11
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - slskd: fix missing -o for curl [@MickLesk](https://github.com/MickLesk) ([#3828](https://github.com/community-scripts/ProxmoxVE/pull/3828))
+    - 2FAuth: Fix php dependencies [@tremor021](https://github.com/tremor021) ([#3820](https://github.com/community-scripts/ProxmoxVE/pull/3820))
+    - Komodo: Update Repository link [@sendyputra](https://github.com/sendyputra) ([#3823](https://github.com/community-scripts/ProxmoxVE/pull/3823))
+
+### 🧰 Maintenance
+
+  - #### 💾 Core
+
+    - Enlarge the size of the menu in build.func [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3833](https://github.com/community-scripts/ProxmoxVE/pull/3833))
+
+### 🌐 Website
+
+  - Bump vite from 6.2.5 to 6.2.6 in /frontend [@dependabot[bot]](https://github.com/dependabot[bot]) ([#3842](https://github.com/community-scripts/ProxmoxVE/pull/3842))
+
+  - #### 📝 Script Information
+
+    - SQLServer: fix some typos in notes [@stiny861](https://github.com/stiny861) ([#3838](https://github.com/community-scripts/ProxmoxVE/pull/3838))
+    - Radicale: move to misc category [@tremor021](https://github.com/tremor021) ([#3830](https://github.com/community-scripts/ProxmoxVE/pull/3830))
+
+## 2025-04-10
+
+### 🆕 New Scripts
+
+  - openproject ([#3637](https://github.com/community-scripts/ProxmoxVE/pull/3637))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Fix: NodeJS Check (Tianji/Docmost) [@MickLesk](https://github.com/MickLesk) ([#3813](https://github.com/community-scripts/ProxmoxVE/pull/3813))
+
+  - #### ✨ New Features
+
+    - change var in ct files to new standard [@MickLesk](https://github.com/MickLesk) ([#3804](https://github.com/community-scripts/ProxmoxVE/pull/3804))
+
+### 🧰 Maintenance
+
+  - #### 💾 Core
+
+    - New Feature: Config File [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3808](https://github.com/community-scripts/ProxmoxVE/pull/3808))
+
+### 💥 Breaking Changes
+
+  - Remove Actualbudget [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3801](https://github.com/community-scripts/ProxmoxVE/pull/3801))
+
+## 2025-04-09
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Paperless-NGX: Extend Granian Service Env [@MickLesk](https://github.com/MickLesk) ([#3790](https://github.com/community-scripts/ProxmoxVE/pull/3790))
+    - Paperless-NGX: remove gunicorn, use python3 for webserver [@MickLesk](https://github.com/MickLesk) ([#3785](https://github.com/community-scripts/ProxmoxVE/pull/3785))
+    - HomeAssistantOS: allow Proxmox version 8.4 [@quentinvnk](https://github.com/quentinvnk) ([#3773](https://github.com/community-scripts/ProxmoxVE/pull/3773))
+    - Tandoor: Add xmlsec as dependency [@tremor021](https://github.com/tremor021) ([#3762](https://github.com/community-scripts/ProxmoxVE/pull/3762))
+
+  - #### 🔧 Refactor
+
+    - harmonize pve versions check & vm vars [@MickLesk](https://github.com/MickLesk) ([#3779](https://github.com/community-scripts/ProxmoxVE/pull/3779))
+
+### 🧰 Maintenance
+
+  - #### 💥 Breaking Changes
+
+    - core: Removal of OS/Version Selection from Advanced Settings [@MickLesk](https://github.com/MickLesk) ([#3771](https://github.com/community-scripts/ProxmoxVE/pull/3771))
+    - core: move misc scripts to structured addon/pve paths | Refactor JSON Editor & Script Mapping [@MickLesk](https://github.com/MickLesk) ([#3765](https://github.com/community-scripts/ProxmoxVE/pull/3765))
+
+## 2025-04-08
+
+### 🆕 New Scripts
+
+  - Alpine-PostgreSQL [@MickLesk](https://github.com/MickLesk) ([#3751](https://github.com/community-scripts/ProxmoxVE/pull/3751))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Alpine-Wireguard: Fix for sysctl and ip_forward [@juronja](https://github.com/juronja) ([#3744](https://github.com/community-scripts/ProxmoxVE/pull/3744))
+    - TriliumNext: fix dump-db [@MickLesk](https://github.com/MickLesk) ([#3741](https://github.com/community-scripts/ProxmoxVE/pull/3741))
+    - Actual: Reduce RAM to 4GB and old space to 3072MB  [@dannyellis](https://github.com/dannyellis) ([#3730](https://github.com/community-scripts/ProxmoxVE/pull/3730))
+
+  - #### ✨ New Features
+
+    - Alpine-MariaDB: better handling of adminer installation [@MickLesk](https://github.com/MickLesk) ([#3739](https://github.com/community-scripts/ProxmoxVE/pull/3739))
+    - Paperless-GPT: Add logging to service file [@tremor021](https://github.com/tremor021) ([#3738](https://github.com/community-scripts/ProxmoxVE/pull/3738))
+
+### 🌐 Website
+
+  - #### 📝 Script Information
+
+    - Meilisearch: Fix Typo [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3749](https://github.com/community-scripts/ProxmoxVE/pull/3749))
+
+## 2025-04-07
+
+### 🆕 New Scripts
+
+  - Breaking: Hoarder > Karakeep [@MickLesk](https://github.com/MickLesk) ([#3699](https://github.com/community-scripts/ProxmoxVE/pull/3699))
+
+### 🚀 Updated Scripts
+
+  - Actual: Increase RAM and add heap-space var for nodejs [@MickLesk](https://github.com/MickLesk) ([#3713](https://github.com/community-scripts/ProxmoxVE/pull/3713))
+
+  - #### 🐞 Bug Fixes
+
+    - Alpine-MariaDB: Fix Install Service startup [@MickLesk](https://github.com/MickLesk) ([#3701](https://github.com/community-scripts/ProxmoxVE/pull/3701))
+    - Zitadel: Fix release tarball crawling [@tremor021](https://github.com/tremor021) ([#3716](https://github.com/community-scripts/ProxmoxVE/pull/3716))
+
+  - #### ✨ New Features
+
+    - Kimai: bump php to 8.4 [@MickLesk](https://github.com/MickLesk) ([#3724](https://github.com/community-scripts/ProxmoxVE/pull/3724))
+
+  - #### 🔧 Refactor
+
+    - Refactor: Zabbix, get always latest version [@MickLesk](https://github.com/MickLesk) ([#3720](https://github.com/community-scripts/ProxmoxVE/pull/3720))
+
+### 🌐 Website
+
+  - #### 📝 Script Information
+
+    - Changed the category of Channels DVR and NextPVR [@johnsturgeon](https://github.com/johnsturgeon) ([#3729](https://github.com/community-scripts/ProxmoxVE/pull/3729))
+
+## 2025-04-06
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Actual: Add git dependency & change yarn commands [@MickLesk](https://github.com/MickLesk) ([#3703](https://github.com/community-scripts/ProxmoxVE/pull/3703))
+    - Pelican-Panel: Fix PHP 8.4 Repository [@MickLesk](https://github.com/MickLesk) ([#3700](https://github.com/community-scripts/ProxmoxVE/pull/3700))
+
+### 🌐 Website
+
+  - #### 🐞 Bug Fixes
+
+    - Implement FAQ component and integrate it into the main page [@BramSuurdje](https://github.com/BramSuurdje) ([#3709](https://github.com/community-scripts/ProxmoxVE/pull/3709))
+
+## 2025-04-05
+
+### 🌐 Website
+
+  - Bump vite from 6.2.4 to 6.2.5 in /frontend [@dependabot[bot]](https://github.com/dependabot[bot]) ([#3668](https://github.com/community-scripts/ProxmoxVE/pull/3668))
+
+## 2025-04-04
+
+### 🆕 New Scripts
+
+  - meilisearch [@MickLesk](https://github.com/MickLesk) ([#3638](https://github.com/community-scripts/ProxmoxVE/pull/3638))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Pelican Panel: Bump php to 8.4 [@bvdberg01](https://github.com/bvdberg01) ([#3669](https://github.com/community-scripts/ProxmoxVE/pull/3669))
+    - Pterodactyl: Bump php to 8.4 [@MickLesk](https://github.com/MickLesk) ([#3655](https://github.com/community-scripts/ProxmoxVE/pull/3655))
+
+  - #### ✨ New Features
+
+    - Caddy: add git for xcaddy [@MickLesk](https://github.com/MickLesk) ([#3657](https://github.com/community-scripts/ProxmoxVE/pull/3657))
+
+### 🧰 Maintenance
+
+  - #### 💾 Core
+
+    - core: fix raw path  [@MickLesk](https://github.com/MickLesk) ([#3656](https://github.com/community-scripts/ProxmoxVE/pull/3656))
+
+## 2025-04-03
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Prowlarr: Fix Typo in URL (update_function) [@ribera96](https://github.com/ribera96) ([#3640](https://github.com/community-scripts/ProxmoxVE/pull/3640))
+    - Prowlarr: Fix typo in release URL [@tremor021](https://github.com/tremor021) ([#3636](https://github.com/community-scripts/ProxmoxVE/pull/3636))
+    - GoMFT: Fix the node_modules deletion command [@tremor021](https://github.com/tremor021) ([#3624](https://github.com/community-scripts/ProxmoxVE/pull/3624))
+    - BookStack: Fix path to downloaded release file [@tremor021](https://github.com/tremor021) ([#3627](https://github.com/community-scripts/ProxmoxVE/pull/3627))
+
+  - #### ✨ New Features
+
+    - VM: show progress bar while downloading [@MickLesk](https://github.com/MickLesk) ([#3634](https://github.com/community-scripts/ProxmoxVE/pull/3634))
+    - *Arr: Move Arr apps to github release crawling and provide update functionality [@tremor021](https://github.com/tremor021) ([#3625](https://github.com/community-scripts/ProxmoxVE/pull/3625))
+
+### 🧰 Maintenance
+
+  - #### 📂 Github
+
+    - Correct URL in contributing docs [@verbumfeit](https://github.com/verbumfeit) ([#3648](https://github.com/community-scripts/ProxmoxVE/pull/3648))
+
+### 🌐 Website
+
+  - Bump next from 15.2.3 to 15.2.4 in /frontend [@dependabot[bot]](https://github.com/dependabot[bot]) ([#3628](https://github.com/community-scripts/ProxmoxVE/pull/3628))
+
+  - #### 📝 Script Information
+
+    - slskd: fix typo for config note [@MickLesk](https://github.com/MickLesk) ([#3633](https://github.com/community-scripts/ProxmoxVE/pull/3633))
+
+## 2025-04-02
+
+### 🆕 New Scripts
+
+  - openziti-tunnel [@emoscardini](https://github.com/emoscardini) ([#3610](https://github.com/community-scripts/ProxmoxVE/pull/3610))
+- Alpine-Wireguard [@MickLesk](https://github.com/MickLesk) ([#3611](https://github.com/community-scripts/ProxmoxVE/pull/3611))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Authelia: fix incorrect rights for email.txt [@MickLesk](https://github.com/MickLesk) ([#3612](https://github.com/community-scripts/ProxmoxVE/pull/3612))
+    - Photoprism: harmonize curl  [@MickLesk](https://github.com/MickLesk) ([#3601](https://github.com/community-scripts/ProxmoxVE/pull/3601))
+    - Fix link in clean-lxcs.sh [@thalatamsainath](https://github.com/thalatamsainath) ([#3593](https://github.com/community-scripts/ProxmoxVE/pull/3593))
+    - Fileflows: Add ImageMagick dependecy [@tremor021](https://github.com/tremor021) ([#3589](https://github.com/community-scripts/ProxmoxVE/pull/3589))
+    - General fixes for several scripts [@tremor021](https://github.com/tremor021) ([#3587](https://github.com/community-scripts/ProxmoxVE/pull/3587))
+
+### 🧰 Maintenance
+
+  - #### 💾 Core
+
+    - UI-Fix: verbose without useless space in header [@MickLesk](https://github.com/MickLesk) ([#3598](https://github.com/community-scripts/ProxmoxVE/pull/3598))
+
+## 2025-04-01
+
+### 🆕 New Scripts
+
+  - Alpine Prometheus [@MickLesk](https://github.com/MickLesk) ([#3547](https://github.com/community-scripts/ProxmoxVE/pull/3547))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Flaresolverr: Fix curl command [@tremor021](https://github.com/tremor021) ([#3583](https://github.com/community-scripts/ProxmoxVE/pull/3583))
+    - Authentik - Fix YQ_LATEST regex [@ceres-c](https://github.com/ceres-c) ([#3565](https://github.com/community-scripts/ProxmoxVE/pull/3565))
+    - Fileflows: Fix update dependencies [@tremor021](https://github.com/tremor021) ([#3577](https://github.com/community-scripts/ProxmoxVE/pull/3577))
+    - CheckMK: Increase Disk size [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3559](https://github.com/community-scripts/ProxmoxVE/pull/3559))
+    - switch arr lxc's (lidarr,-prowlarr,-radarr,-readarr,-whisparr) to curl -fsSL [@MickLesk](https://github.com/MickLesk) ([#3554](https://github.com/community-scripts/ProxmoxVE/pull/3554))
+
+  - #### 💥 Breaking Changes
+
+    - Replace wget with curl -fsSL, normalize downloads, and prep for IPv6 [@MickLesk](https://github.com/MickLesk) ([#3455](https://github.com/community-scripts/ProxmoxVE/pull/3455))
+
+  - #### 🔧 Refactor
+
+    - Fixes and standard enforcement [@tremor021](https://github.com/tremor021) ([#3564](https://github.com/community-scripts/ProxmoxVE/pull/3564))
+
+### 🌐 Website
+
+  - Update metadata inside layout.tsx for better SEO [@BramSuurdje](https://github.com/BramSuurdje) ([#3570](https://github.com/community-scripts/ProxmoxVE/pull/3570))
+- Bump vite from 5.4.14 to 5.4.16 in /frontend [@dependabot[bot]](https://github.com/dependabot[bot]) ([#3549](https://github.com/community-scripts/ProxmoxVE/pull/3549))
+
+  - #### ✨ New Features
+
+    - Refactor ScriptItem and Buttons components to enhance layout and integrate dropdown for links. Update InterFaces component for improved styling and structure. [@BramSuurdje](https://github.com/BramSuurdje) ([#3567](https://github.com/community-scripts/ProxmoxVE/pull/3567))
+
+## 2025-03-31
+
+### 🆕 New Scripts
+
+  - slskd [@vhsdream](https://github.com/vhsdream) ([#3516](https://github.com/community-scripts/ProxmoxVE/pull/3516))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - The Lounge: Fix sqlite3 failing to build [@tremor021](https://github.com/tremor021) ([#3542](https://github.com/community-scripts/ProxmoxVE/pull/3542))
+    - 2FAuth: Update PHP to 8.3 [@BrockHumblet](https://github.com/BrockHumblet) ([#3510](https://github.com/community-scripts/ProxmoxVE/pull/3510))
+    - GoMFT: Update Curl Path [@MickLesk](https://github.com/MickLesk) ([#3537](https://github.com/community-scripts/ProxmoxVE/pull/3537))
+    - slskd: fix broken curl for soularr [@MickLesk](https://github.com/MickLesk) ([#3533](https://github.com/community-scripts/ProxmoxVE/pull/3533))
+    - Docmost: Bump NodeJS to 22 & fixed pnpm [@MickLesk](https://github.com/MickLesk) ([#3521](https://github.com/community-scripts/ProxmoxVE/pull/3521))
+    - Tianji: Bump NodeJS to V22 [@MickLesk](https://github.com/MickLesk) ([#3519](https://github.com/community-scripts/ProxmoxVE/pull/3519))
+
+  - #### ✨ New Features
+
+    - NPMPlus: update function & better create handling (user/password) [@MickLesk](https://github.com/MickLesk) ([#3520](https://github.com/community-scripts/ProxmoxVE/pull/3520))
+
+  - #### 🔧 Refactor
+
+    - Remove old `.jar` versions of Stirling-PDF [@JcMinarro](https://github.com/JcMinarro) ([#3512](https://github.com/community-scripts/ProxmoxVE/pull/3512))
+
+### 🧰 Maintenance
+
+  - #### 💾 Core
+
+    - core: fix empty header if header in repo exist [@MickLesk](https://github.com/MickLesk) ([#3536](https://github.com/community-scripts/ProxmoxVE/pull/3536))
+
+### 🌐 Website
+
+  - #### ✨ New Features
+
+    - Change Frontend Version Info [@MickLesk](https://github.com/MickLesk) ([#3527](https://github.com/community-scripts/ProxmoxVE/pull/3527))
+
+  - #### 📝 Script Information
+
+    - HomeAssistant (Container): Better Portainer explanation [@MickLesk](https://github.com/MickLesk) ([#3518](https://github.com/community-scripts/ProxmoxVE/pull/3518))
+
+## 2025-03-30
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Open WebUI: Fix Ollama update logic [@tremor021](https://github.com/tremor021) ([#3506](https://github.com/community-scripts/ProxmoxVE/pull/3506))
+    - GoMFT: Add frontend build procedure [@tremor021](https://github.com/tremor021) ([#3499](https://github.com/community-scripts/ProxmoxVE/pull/3499))
+
+  - #### ✨ New Features
+
+    - Open WebUI: Add Ollama update check [@tremor021](https://github.com/tremor021) ([#3478](https://github.com/community-scripts/ProxmoxVE/pull/3478))
+
+## 2025-03-29
+
+### 🆕 New Scripts
+
+  - Alpine MariaDB [@MickLesk](https://github.com/MickLesk) ([#3456](https://github.com/community-scripts/ProxmoxVE/pull/3456))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Komodo: Fix wrong sed text [@tremor021](https://github.com/tremor021) ([#3491](https://github.com/community-scripts/ProxmoxVE/pull/3491))
+    - GoMFT: Fix release archive naming [@tremor021](https://github.com/tremor021) ([#3483](https://github.com/community-scripts/ProxmoxVE/pull/3483))
+    - Homepage: Fix release parsing [@tremor021](https://github.com/tremor021) ([#3484](https://github.com/community-scripts/ProxmoxVE/pull/3484))
+    - Netdata: Fix debian-keyring dependency missing [@tremor021](https://github.com/tremor021) ([#3477](https://github.com/community-scripts/ProxmoxVE/pull/3477))
+    - ErsatzTV: Fix temp file reference [@tremor021](https://github.com/tremor021) ([#3476](https://github.com/community-scripts/ProxmoxVE/pull/3476))
+    - Komodo: Fix compose.env [@tremor021](https://github.com/tremor021) ([#3466](https://github.com/community-scripts/ProxmoxVE/pull/3466))
+
+## 2025-03-28
+
+### 🆕 New Scripts
+
+  - Alpine Node-RED [@MickLesk](https://github.com/MickLesk) ([#3457](https://github.com/community-scripts/ProxmoxVE/pull/3457))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - GoMFT: Fix release grep [@tremor021](https://github.com/tremor021) ([#3462](https://github.com/community-scripts/ProxmoxVE/pull/3462))
+    - ErsatzTV: Fix path in update function [@tremor021](https://github.com/tremor021) ([#3463](https://github.com/community-scripts/ProxmoxVE/pull/3463))
+
+## 2025-03-27
+
+### 🚀 Updated Scripts
+
+  - [core]: add functions for Alpine (update / core deps) [@MickLesk](https://github.com/MickLesk) ([#3437](https://github.com/community-scripts/ProxmoxVE/pull/3437))
+
+### 🧰 Maintenance
+
+  - #### 💾 Core
+
+    - [core]: Refactor Spinner/MSG Function (support now alpine / performance / handling) [@MickLesk](https://github.com/MickLesk) ([#3436](https://github.com/community-scripts/ProxmoxVE/pull/3436))
+
+## 2025-03-26
+
+### 🆕 New Scripts
+
+  - Alpine: Gitea [@MickLesk](https://github.com/MickLesk) ([#3424](https://github.com/community-scripts/ProxmoxVE/pull/3424))
+
+### 🚀 Updated Scripts
+
+  - FlowiseAI: Fix dependencies [@tremor021](https://github.com/tremor021) ([#3427](https://github.com/community-scripts/ProxmoxVE/pull/3427))
+
+  - #### 🐞 Bug Fixes
+
+    - fluid-calendar: Fix failed build during updates [@vhsdream](https://github.com/vhsdream) ([#3417](https://github.com/community-scripts/ProxmoxVE/pull/3417))
+
+### 🧰 Maintenance
+
+  - #### 📂 Github
+
+    - Remove coredeps in CONTRIBUTOR_AND_GUIDES [@bvdberg01](https://github.com/bvdberg01) ([#3420](https://github.com/community-scripts/ProxmoxVE/pull/3420))
+
+## 2025-03-25
+
+### 🧰 Maintenance
+
+  - #### 📂 Github
+
+    - Discord invite link updated [@MickLesk](https://github.com/MickLesk) ([#3412](https://github.com/community-scripts/ProxmoxVE/pull/3412))
+
+## 2025-03-24
+
+### 🆕 New Scripts
+
+  - fileflows [@kkroboth](https://github.com/kkroboth) ([#3392](https://github.com/community-scripts/ProxmoxVE/pull/3392))
+- wazuh [@omiinaya](https://github.com/omiinaya) ([#3381](https://github.com/community-scripts/ProxmoxVE/pull/3381))
+- yt-dlp-webui [@CrazyWolf13](https://github.com/CrazyWolf13) ([#3364](https://github.com/community-scripts/ProxmoxVE/pull/3364))
+- Extension/New Script: Redis Alpine Installation [@MickLesk](https://github.com/MickLesk) ([#3367](https://github.com/community-scripts/ProxmoxVE/pull/3367))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Extend HOME Env for Kubo [@MickLesk](https://github.com/MickLesk) ([#3397](https://github.com/community-scripts/ProxmoxVE/pull/3397))
+
+  - #### ✨ New Features
+
+    - [core] Rebase Scripts (formatting, highlighting & remove old deps) [@MickLesk](https://github.com/MickLesk) ([#3378](https://github.com/community-scripts/ProxmoxVE/pull/3378))
+
+  - #### 🔧 Refactor
+
+    - qBittorrent: Switch to static builds for faster updating/upgrading [@tremor021](https://github.com/tremor021) ([#3405](https://github.com/community-scripts/ProxmoxVE/pull/3405))
+    - Refactor: ErsatzTV Script [@MickLesk](https://github.com/MickLesk) ([#3365](https://github.com/community-scripts/ProxmoxVE/pull/3365))
+
+### 🧰 Maintenance
+
+  - #### ✨ New Features
+
+    - [core] install core deps (debian / ubuntu) [@MickLesk](https://github.com/MickLesk) ([#3366](https://github.com/community-scripts/ProxmoxVE/pull/3366))
+
+  - #### 💾 Core
+
+    - [core] extend hardware transcoding for fileflows #3392 [@MickLesk](https://github.com/MickLesk) ([#3396](https://github.com/community-scripts/ProxmoxVE/pull/3396))
+
+  - #### 📂 Github
+
+    - Refactor Changelog Workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3371](https://github.com/community-scripts/ProxmoxVE/pull/3371))
+
+### 🌐 Website
+
+  - Update siteConfig.tsx to use new analytics code [@BramSuurdje](https://github.com/BramSuurdje) ([#3389](https://github.com/community-scripts/ProxmoxVE/pull/3389))
+
+  - #### 🐞 Bug Fixes
+
+    - Better Text for Version Date [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3388](https://github.com/community-scripts/ProxmoxVE/pull/3388))
+
+## 2025-03-23
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - GoMFT: Check if build-essential is present before updating, if not then install it [@tremor021](https://github.com/tremor021) ([#3358](https://github.com/community-scripts/ProxmoxVE/pull/3358))
+
+## 2025-03-22
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - revealjs: Fix update process [@tremor021](https://github.com/tremor021) ([#3341](https://github.com/community-scripts/ProxmoxVE/pull/3341))
+    - Cronicle: add missing gnupg package [@MickLesk](https://github.com/MickLesk) ([#3323](https://github.com/community-scripts/ProxmoxVE/pull/3323))
+
+  - #### ✨ New Features
+
+    - Update nextcloud-vm.sh to 18.1 ISO [@0xN0BADC0FF33](https://github.com/0xN0BADC0FF33) ([#3333](https://github.com/community-scripts/ProxmoxVE/pull/3333))
+
+## 2025-03-21
+
+### 🚀 Updated Scripts
+
+  - Omada jdk to jre [@bvdberg01](https://github.com/bvdberg01) ([#3319](https://github.com/community-scripts/ProxmoxVE/pull/3319))
+
+  - #### 🐞 Bug Fixes
+
+    - Omada zulu 8 to 21 [@bvdberg01](https://github.com/bvdberg01) ([#3318](https://github.com/community-scripts/ProxmoxVE/pull/3318))
+    - MySQL: Correctly add repo to mysql.list [@tremor021](https://github.com/tremor021) ([#3315](https://github.com/community-scripts/ProxmoxVE/pull/3315))
+    - GoMFT: Fix build dependencies [@tremor021](https://github.com/tremor021) ([#3313](https://github.com/community-scripts/ProxmoxVE/pull/3313))
+    - GoMFT: Don't rely on binaries from github [@tremor021](https://github.com/tremor021) ([#3303](https://github.com/community-scripts/ProxmoxVE/pull/3303))
+
+### 🧰 Maintenance
+
+  - #### 💾 Core
+
+    - Clarify MTU in advanced Settings. [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3296](https://github.com/community-scripts/ProxmoxVE/pull/3296))
+
+### 🌐 Website
+
+  - Bump next from 15.1.3 to 15.2.3 in /frontend [@dependabot[bot]](https://github.com/dependabot[bot]) ([#3316](https://github.com/community-scripts/ProxmoxVE/pull/3316))
+
+  - #### 📝 Script Information
+
+    - Proxmox, rather than Promox [@gringocl](https://github.com/gringocl) ([#3293](https://github.com/community-scripts/ProxmoxVE/pull/3293))
+    - Audiobookshelf: Fix category on website [@jaykup26](https://github.com/jaykup26) ([#3304](https://github.com/community-scripts/ProxmoxVE/pull/3304))
+    - Threadfin: add port for website [@MickLesk](https://github.com/MickLesk) ([#3295](https://github.com/community-scripts/ProxmoxVE/pull/3295))
+
+## 2025-03-20
+
+### 🚀 Updated Scripts
+
+  - #### ✨ New Features
+
+    - Netdata: Update to newer deb File [@MickLesk](https://github.com/MickLesk) ([#3276](https://github.com/community-scripts/ProxmoxVE/pull/3276))
+
+### 🧰 Maintenance
+
+  - #### ✨ New Features
+
+    - [core] add gitignore to prevent big pulls [@MickLesk](https://github.com/MickLesk) ([#3278](https://github.com/community-scripts/ProxmoxVE/pull/3278))
+
+## 2025-03-19
+
+### 🚀 Updated Scripts
+
+  - License url VED to VE [@bvdberg01](https://github.com/bvdberg01) ([#3258](https://github.com/community-scripts/ProxmoxVE/pull/3258))
+
+  - #### 🐞 Bug Fixes
+
+    - Snipe-IT: Remove composer update & add no interaction for install [@MickLesk](https://github.com/MickLesk) ([#3256](https://github.com/community-scripts/ProxmoxVE/pull/3256))
+    - Fluid-Calendar: Remove unneeded $STD in update [@MickLesk](https://github.com/MickLesk) ([#3250](https://github.com/community-scripts/ProxmoxVE/pull/3250))
+
+  - #### 💥 Breaking Changes
+
+    - FluidCalendar: Switch to safer DB operations [@vhsdream](https://github.com/vhsdream) ([#3270](https://github.com/community-scripts/ProxmoxVE/pull/3270))
+
+### 🌐 Website
+
+  - #### 🐞 Bug Fixes
+
+    - JSON editor note fix [@bvdberg01](https://github.com/bvdberg01) ([#3260](https://github.com/community-scripts/ProxmoxVE/pull/3260))
+
+## 2025-03-18
+
+### 🆕 New Scripts
+
+  - CryptPad [@MickLesk](https://github.com/MickLesk) ([#3205](https://github.com/community-scripts/ProxmoxVE/pull/3205))
+- GoMFT [@tremor021](https://github.com/tremor021) ([#3157](https://github.com/community-scripts/ProxmoxVE/pull/3157))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Update omada download url [@bvdberg01](https://github.com/bvdberg01) ([#3245](https://github.com/community-scripts/ProxmoxVE/pull/3245))
+    - Wikijs: Remove Dev Message & Performance-Boost [@bvdberg01](https://github.com/bvdberg01) ([#3232](https://github.com/community-scripts/ProxmoxVE/pull/3232))
+    - Fix openwebui update script when backup directory already exists [@chrisdoc](https://github.com/chrisdoc) ([#3213](https://github.com/community-scripts/ProxmoxVE/pull/3213))
+
+  - #### 💥 Breaking Changes
+
+    - Tandoor: Extend needed dependencies (Read for Update-Functionality)  [@MickLesk](https://github.com/MickLesk) ([#3207](https://github.com/community-scripts/ProxmoxVE/pull/3207))
+
+### 🧰 Maintenance
+
+  - #### 📂 Github
+
+    - [core] cleanup - remove old backups of workflow files [@MickLesk](https://github.com/MickLesk) ([#3247](https://github.com/community-scripts/ProxmoxVE/pull/3247))
+    - Add worflow to crawl APP verisons [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3192](https://github.com/community-scripts/ProxmoxVE/pull/3192))
+    - Update pr template and WF [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3200](https://github.com/community-scripts/ProxmoxVE/pull/3200))
+    - Update Workflow Context [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3171](https://github.com/community-scripts/ProxmoxVE/pull/3171))
+    - Change json path CONTRIBUTING.md [@bvdberg01](https://github.com/bvdberg01) ([#3187](https://github.com/community-scripts/ProxmoxVE/pull/3187))
+    - Relocate the Json Files [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3184](https://github.com/community-scripts/ProxmoxVE/pull/3184))
+    - Update Workflow to Close Discussion [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3185](https://github.com/community-scripts/ProxmoxVE/pull/3185))
+
+### 🌐 Website
+
+  - #### 🐞 Bug Fixes
+
+    - Move cryptpad files to right folders [@bvdberg01](https://github.com/bvdberg01) ([#3242](https://github.com/community-scripts/ProxmoxVE/pull/3242))
+    - Update Frontend Version Logic [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3223](https://github.com/community-scripts/ProxmoxVE/pull/3223))
+
+  - #### ✨ New Features
+
+    - Add Latest Change Date to Frontend [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3231](https://github.com/community-scripts/ProxmoxVE/pull/3231))
+    - Show Version Information on Frontend [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3216](https://github.com/community-scripts/ProxmoxVE/pull/3216))
+
+  - #### 📝 Script Information
+
+    - CrowdSec: Add debian only warning to website [@tremor021](https://github.com/tremor021) ([#3210](https://github.com/community-scripts/ProxmoxVE/pull/3210))
+    - Debian VM: Update webpage with login info [@tremor021](https://github.com/tremor021) ([#3215](https://github.com/community-scripts/ProxmoxVE/pull/3215))
+    - Heimdall Dashboard: Fix missing logo on website [@tremor021](https://github.com/tremor021) ([#3227](https://github.com/community-scripts/ProxmoxVE/pull/3227))
+    - Seafile: lowercase slug for Install/Update-Source [@MickLesk](https://github.com/MickLesk) ([#3209](https://github.com/community-scripts/ProxmoxVE/pull/3209))
+    - Website: Lowercase Zitadel-Slug [@MickLesk](https://github.com/MickLesk) ([#3222](https://github.com/community-scripts/ProxmoxVE/pull/3222))
+    - VictoriaMetrics: Fix Wrong Slug [@MickLesk](https://github.com/MickLesk) ([#3225](https://github.com/community-scripts/ProxmoxVE/pull/3225))
+    - Update Pimox Logo [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3233](https://github.com/community-scripts/ProxmoxVE/pull/3233))
+    - [AUTOMATIC PR]Update versions.json [@community-scripts-pr-app[bot]](https://github.com/community-scripts-pr-app[bot]) ([#3201](https://github.com/community-scripts/ProxmoxVE/pull/3201))
+    - GoMFT: Update Logo [@MickLesk](https://github.com/MickLesk) ([#3188](https://github.com/community-scripts/ProxmoxVE/pull/3188))
+
+## 2025-03-17
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - TriliumNotes: Fix release handling [@tremor021](https://github.com/tremor021) ([#3160](https://github.com/community-scripts/ProxmoxVE/pull/3160))
+    - TriliumNext: Fix release file name/path, preventing install and update [@tremor021](https://github.com/tremor021) ([#3152](https://github.com/community-scripts/ProxmoxVE/pull/3152))
+    - qBittorrent: Accept legal notice in config file [@tremor021](https://github.com/tremor021) ([#3150](https://github.com/community-scripts/ProxmoxVE/pull/3150))
+    - Tandoor: Switch Repo to new Link [@MickLesk](https://github.com/MickLesk) ([#3140](https://github.com/community-scripts/ProxmoxVE/pull/3140))
+    - Fixed wrong PHP values to match default part-db size (100M) [@dMopp](https://github.com/dMopp) ([#3143](https://github.com/community-scripts/ProxmoxVE/pull/3143))
+    - Kimai: Fix Permission Issue on new Timerecords [@MickLesk](https://github.com/MickLesk) ([#3136](https://github.com/community-scripts/ProxmoxVE/pull/3136))
+
+  - #### ✨ New Features
+
+    - InfluxDB: Add Ports as Info / Script-End [@MickLesk](https://github.com/MickLesk) ([#3141](https://github.com/community-scripts/ProxmoxVE/pull/3141))
+    - ByteStash: Add option for multiple accounts and generate JWT secret [@tremor021](https://github.com/tremor021) ([#3132](https://github.com/community-scripts/ProxmoxVE/pull/3132))
+
+### 🌐 Website
+
+  - #### 📝 Script Information
+
+    - Paperless-ngx: Fix example on website [@tremor021](https://github.com/tremor021) ([#3155](https://github.com/community-scripts/ProxmoxVE/pull/3155))
+
+## 2025-03-16
+
+### 🚀 Updated Scripts
+
+  - Typo Enviroment > Environment [@MathijsG](https://github.com/MathijsG) ([#3115](https://github.com/community-scripts/ProxmoxVE/pull/3115))
+- Paperless-ngx: Add additional information to website on how to install OCR languages [@tremor021](https://github.com/tremor021) ([#3111](https://github.com/community-scripts/ProxmoxVE/pull/3111))
+- Prometheus PVE Exporter: Rightsizing RAM and Disk [@andygrunwald](https://github.com/andygrunwald) ([#3098](https://github.com/community-scripts/ProxmoxVE/pull/3098))
+
+  - #### 🐞 Bug Fixes
+
+    - Jellyseerr: Fix dependencies [@tremor021](https://github.com/tremor021) ([#3125](https://github.com/community-scripts/ProxmoxVE/pull/3125))
+    - wger: Fix build.func path [@tremor021](https://github.com/tremor021) ([#3121](https://github.com/community-scripts/ProxmoxVE/pull/3121))
+    - Filebrowser: Fix hardcoded port in Debian service file [@Xerovoxx98](https://github.com/Xerovoxx98) ([#3105](https://github.com/community-scripts/ProxmoxVE/pull/3105))
+
+### 🌐 Website
+
+  - #### 📝 Script Information
+
+    - Website: Fix alpine-it-tools "undefined" Link [@CrazyWolf13](https://github.com/CrazyWolf13) ([#3110](https://github.com/community-scripts/ProxmoxVE/pull/3110))
+
+## 2025-03-15
+
+### 🚀 Updated Scripts
+
+  - #### 💥 Breaking Changes
+
+    - Homepage: Bugfix for v1.0.0 [@vhsdream](https://github.com/vhsdream) ([#3092](https://github.com/community-scripts/ProxmoxVE/pull/3092))
+
+## 2025-03-14
+
+### 🚀 Updated Scripts
+
+  - Memos: Increase RAM Usage and max space [@MickLesk](https://github.com/MickLesk) ([#3072](https://github.com/community-scripts/ProxmoxVE/pull/3072))
+- Seafile - Minor bug fix: domain.sh script fix [@dave-yap](https://github.com/dave-yap) ([#3046](https://github.com/community-scripts/ProxmoxVE/pull/3046))
+
+  - #### 🐞 Bug Fixes
+
+    - openwrt: fix typo netmask [@qzydustin](https://github.com/qzydustin) ([#3084](https://github.com/community-scripts/ProxmoxVE/pull/3084))
+
+### 🌐 Website
+
+  - #### 📝 Script Information
+
+    - NPMplus: Add info about docker use. [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3085](https://github.com/community-scripts/ProxmoxVE/pull/3085))
+
+## 2025-03-13
+
+### 🆕 New Scripts
+
+  - NPMplus [@MickLesk](https://github.com/MickLesk) ([#3051](https://github.com/community-scripts/ProxmoxVE/pull/3051))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - OpenWebUI check if there are stashed changes before poping [@tremor021](https://github.com/tremor021) ([#3064](https://github.com/community-scripts/ProxmoxVE/pull/3064))
+    - Update Fluid Calendar for v1.2.0 [@vhsdream](https://github.com/vhsdream) ([#3053](https://github.com/community-scripts/ProxmoxVE/pull/3053))
+
+### 🧰 Maintenance
+
+  - #### 💾 Core
+
+    - alpine-Install (core) add timezone (tz) check [@MickLesk](https://github.com/MickLesk) ([#3057](https://github.com/community-scripts/ProxmoxVE/pull/3057))
+
+  - #### 📂 Github
+
+    - New Workflow: Close Issues in DEV Repo when new Script is merged [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#3042](https://github.com/community-scripts/ProxmoxVE/pull/3042))
+
+### 🌐 Website
+
+  - Bump @babel/runtime from 7.26.0 to 7.26.10 in /frontend [@dependabot[bot]](https://github.com/dependabot[bot]) ([#3044](https://github.com/community-scripts/ProxmoxVE/pull/3044))
+
+  - #### 📝 Script Information
+
+    - Update Vaultwarden Source [@MickLesk](https://github.com/MickLesk) ([#3036](https://github.com/community-scripts/ProxmoxVE/pull/3036))
+    - Website: Fix Alpine "undefined" Link [@MickLesk](https://github.com/MickLesk) ([#3048](https://github.com/community-scripts/ProxmoxVE/pull/3048))
+
+## 2025-03-12
+
+### 🆕 New Scripts
+
+  - Fluid Calendar [@vhsdream](https://github.com/vhsdream) ([#2869](https://github.com/community-scripts/ProxmoxVE/pull/2869))
+
+### 🚀 Updated Scripts
+
+  - #### ✨ New Features
+
+    - Feature: Filebrowser: support now alpine [@MickLesk](https://github.com/MickLesk) ([#2997](https://github.com/community-scripts/ProxmoxVE/pull/2997))
+
+## 2025-03-11
+
+### 🆕 New Scripts
+
+  - Plant-it [@MickLesk](https://github.com/MickLesk) ([#3000](https://github.com/community-scripts/ProxmoxVE/pull/3000))
+- Seafile [@dave-yap](https://github.com/dave-yap) ([#2987](https://github.com/community-scripts/ProxmoxVE/pull/2987))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Headscale: Re-enable Service after Update [@Cerothen](https://github.com/Cerothen) ([#3012](https://github.com/community-scripts/ProxmoxVE/pull/3012))
+    - SnipeIT: Harmonize composer install to Project-Dockerfile [@MickLesk](https://github.com/MickLesk) ([#3009](https://github.com/community-scripts/ProxmoxVE/pull/3009))
+    - Teddycloud: fix update function [@tremor021](https://github.com/tremor021) ([#2996](https://github.com/community-scripts/ProxmoxVE/pull/2996))
+
+### 🧰 Maintenance
+
+  - #### 📂 Github
+
+    - Cleanup Old Project Files (figlet, app-header, images) [@MickLesk](https://github.com/MickLesk) ([#3004](https://github.com/community-scripts/ProxmoxVE/pull/3004))
+    - Additions and amends to the CONTIRBUTOR docs [@tremor021](https://github.com/tremor021) ([#2983](https://github.com/community-scripts/ProxmoxVE/pull/2983))
+
+### 🌐 Website
+
+  - #### 📝 Script Information
+
+    - Jellyseer not labeled as updateable even though update function exists [@tremor021](https://github.com/tremor021) ([#2991](https://github.com/community-scripts/ProxmoxVE/pull/2991))
+    - Fix Website - Show correct wget path for alpine [@MickLesk](https://github.com/MickLesk) ([#2998](https://github.com/community-scripts/ProxmoxVE/pull/2998))
+
+## 2025-03-10
+
+### 🆕 New Scripts
+
+  - Paperless-GPT [@MickLesk](https://github.com/MickLesk) ([#2965](https://github.com/community-scripts/ProxmoxVE/pull/2965))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Rework SnipeIT: Tarball & Tempfile [@MickLesk](https://github.com/MickLesk) ([#2963](https://github.com/community-scripts/ProxmoxVE/pull/2963))
+    - pihole: fix path when accessing pihole using `pct enter` [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2964](https://github.com/community-scripts/ProxmoxVE/pull/2964))
+    - Hoarder: v0.23.0 dependency update [@vhsdream](https://github.com/vhsdream) ([#2958](https://github.com/community-scripts/ProxmoxVE/pull/2958))
+
+### 🧰 Maintenance
+
+  - #### 📂 Github
+
+    - Update autolabeler.yml: Set Labels correctly [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2968](https://github.com/community-scripts/ProxmoxVE/pull/2968))
+
+### 🌐 Website
+
+  - Add warnings about externaly sourced scripts [@tremor021](https://github.com/tremor021) ([#2975](https://github.com/community-scripts/ProxmoxVE/pull/2975))
+
+## 2025-03-09
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Fix wikijs update issue while backing up data [@AdelRefaat](https://github.com/AdelRefaat) ([#2950](https://github.com/community-scripts/ProxmoxVE/pull/2950))
+
+### 🧰 Maintenance
+
+  - #### 🐞 Bug Fixes
+
+    - Improve Release-Action (awk function) [@MickLesk](https://github.com/MickLesk) ([#2934](https://github.com/community-scripts/ProxmoxVE/pull/2934))
+
+### 🌐 Website
+
+  - #### 🐞 Bug Fixes
+
+    - Pi-hole interface port in documentation [@la7eralus](https://github.com/la7eralus) ([#2953](https://github.com/community-scripts/ProxmoxVE/pull/2953))
+
+## 2025-03-08
+
+### 🌐 Website
+
+  - #### 🐞 Bug Fixes
+
+    - Update slug to lowercase in pf2etools.json  [@PhoenixEmik](https://github.com/PhoenixEmik) ([#2942](https://github.com/community-scripts/ProxmoxVE/pull/2942))
+
+## 2025-03-07
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - JupyterNotebook: Fix APP Variable [@MickLesk](https://github.com/MickLesk) ([#2924](https://github.com/community-scripts/ProxmoxVE/pull/2924))
+
+  - #### ✨ New Features
+
+    - Beszel: restarting service after update [@C0pywriting](https://github.com/C0pywriting) ([#2915](https://github.com/community-scripts/ProxmoxVE/pull/2915))
+
+  - #### 💥 Breaking Changes
+
+    - ActualBudget: Update Script with new Repo [@MickLesk](https://github.com/MickLesk) ([#2907](https://github.com/community-scripts/ProxmoxVE/pull/2907))
+
+### 🌐 Website
+
+  - #### 📝 Script Information
+
+    - Improve Nextcloud(pi) docu and Name to NextcloudPi [@MickLesk](https://github.com/MickLesk) ([#2930](https://github.com/community-scripts/ProxmoxVE/pull/2930))
+    - fix jupyternotebook slug [@MickLesk](https://github.com/MickLesk) ([#2922](https://github.com/community-scripts/ProxmoxVE/pull/2922))
+    - Improve Trilium Description and Name to TriliumNext [@MickLesk](https://github.com/MickLesk) ([#2929](https://github.com/community-scripts/ProxmoxVE/pull/2929))
+    - Prowlarr icon [@bannert1337](https://github.com/bannert1337) ([#2906](https://github.com/community-scripts/ProxmoxVE/pull/2906))
+    - Update Apache Tika icon to SVG [@bannert1337](https://github.com/bannert1337) ([#2904](https://github.com/community-scripts/ProxmoxVE/pull/2904))
+    - Update Prometheus Alertmanager Icon [@bannert1337](https://github.com/bannert1337) ([#2905](https://github.com/community-scripts/ProxmoxVE/pull/2905))
+
+## 2025-03-06
+
+### 🆕 New Scripts
+
+  - InvenTree [@tremor021](https://github.com/tremor021) ([#2890](https://github.com/community-scripts/ProxmoxVE/pull/2890))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Homarr: Optional Reboot after update [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2876](https://github.com/community-scripts/ProxmoxVE/pull/2876))
+    - Fix Tag "community-scripts" for ArchLinux / OPNSense [@MickLesk](https://github.com/MickLesk) ([#2875](https://github.com/community-scripts/ProxmoxVE/pull/2875))
+
+  - #### ✨ New Features
+
+    - Wastebin: Update Script for Version 3.0.0 [@MickLesk](https://github.com/MickLesk) ([#2885](https://github.com/community-scripts/ProxmoxVE/pull/2885))
+
+## 2025-03-05
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Kimai: Better Handling of Updates (backup var / env / yaml) [@MickLesk](https://github.com/MickLesk) ([#2862](https://github.com/community-scripts/ProxmoxVE/pull/2862))
+    - Fix NextcloudPi-Installation [@MickLesk](https://github.com/MickLesk) ([#2853](https://github.com/community-scripts/ProxmoxVE/pull/2853))
+
+## 2025-03-04
+
+### 🆕 New Scripts
+
+  - Reveal.js [@tremor021](https://github.com/tremor021) ([#2806](https://github.com/community-scripts/ProxmoxVE/pull/2806))
+- Apache Tomcat [@MickLesk](https://github.com/MickLesk) ([#2797](https://github.com/community-scripts/ProxmoxVE/pull/2797))
+- Pterodactyl Wings [@bvdberg01](https://github.com/bvdberg01) ([#2800](https://github.com/community-scripts/ProxmoxVE/pull/2800))
+- Pterodactyl Panel [@bvdberg01](https://github.com/bvdberg01) ([#2801](https://github.com/community-scripts/ProxmoxVE/pull/2801))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - reveal.js: Update function now backs up index and config [@tremor021](https://github.com/tremor021) ([#2845](https://github.com/community-scripts/ProxmoxVE/pull/2845))
+    - Changedetection: Increase RAM & Disk-Space [@MickLesk](https://github.com/MickLesk) ([#2838](https://github.com/community-scripts/ProxmoxVE/pull/2838))
+    - Linkwarden: Optimze RUST Installation [@MickLesk](https://github.com/MickLesk) ([#2817](https://github.com/community-scripts/ProxmoxVE/pull/2817))
+    - Nginx: Fix $STD for tar [@MickLesk](https://github.com/MickLesk) ([#2813](https://github.com/community-scripts/ProxmoxVE/pull/2813))
+
+  - #### ✨ New Features
+
+    - Add source to install scripts and make license one line [@bvdberg01](https://github.com/bvdberg01) ([#2842](https://github.com/community-scripts/ProxmoxVE/pull/2842))
+
+### 🧰 Maintenance
+
+  - #### 🐞 Bug Fixes
+
+    - Better handling of create release [@MickLesk](https://github.com/MickLesk) ([#2818](https://github.com/community-scripts/ProxmoxVE/pull/2818))
+
+### 🌐 Website
+
+  - #### 🐞 Bug Fixes
+
+    - Json file update [@bvdberg01](https://github.com/bvdberg01) ([#2824](https://github.com/community-scripts/ProxmoxVE/pull/2824))
+    - Prometheus-paperless-ngx-exporter: Fix wrong Interface Port [@schneider-de-com](https://github.com/schneider-de-com) ([#2812](https://github.com/community-scripts/ProxmoxVE/pull/2812))
+
+  - #### ✨ New Features
+
+    - Feature: Update Icons (selfhst repo) [@bannert1337](https://github.com/bannert1337) ([#2834](https://github.com/community-scripts/ProxmoxVE/pull/2834))
+    - Website: Add Mikrotik to Network too, OPNSense & OpenWRT to OS [@MickLesk](https://github.com/MickLesk) ([#2823](https://github.com/community-scripts/ProxmoxVE/pull/2823))
+
+## 2025-03-03
+
+### 🆕 New Scripts
+
+  - Habitica [@tremor021](https://github.com/tremor021) ([#2779](https://github.com/community-scripts/ProxmoxVE/pull/2779))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Zigbee2Mqtt Use fixed pnpm Version 10.4.1 [@MickLesk](https://github.com/MickLesk) ([#2805](https://github.com/community-scripts/ProxmoxVE/pull/2805))
+    - Linkwarden: Fix & Update Monolith-Installation [@MickLesk](https://github.com/MickLesk) ([#2787](https://github.com/community-scripts/ProxmoxVE/pull/2787))
+
+  - #### ✨ New Features
+
+    - Feature: MinIO use now static port 9001 [@MickLesk](https://github.com/MickLesk) ([#2786](https://github.com/community-scripts/ProxmoxVE/pull/2786))
+    - Feature Template Path for Mountings [@MickLesk](https://github.com/MickLesk) ([#2785](https://github.com/community-scripts/ProxmoxVE/pull/2785))
+
+### 🌐 Website
+
+  - #### ✨ New Features
+
+    - Feature: Website - show default OS [@MickLesk](https://github.com/MickLesk) ([#2790](https://github.com/community-scripts/ProxmoxVE/pull/2790))
+
+  - #### 📝 Script Information
+
+    - Update zigbee2mqtt.json - make sure link is clickable [@gurtjun](https://github.com/gurtjun) ([#2802](https://github.com/community-scripts/ProxmoxVE/pull/2802))
+
+## 2025-03-02
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Fix gpg Repo for nzbget [@flatlinebb](https://github.com/flatlinebb) ([#2774](https://github.com/community-scripts/ProxmoxVE/pull/2774))
+
+## 2025-03-01
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Firefly III: FIx Ownership for OAuth Key [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2759](https://github.com/community-scripts/ProxmoxVE/pull/2759))
+    - homarr: double restart to fix homarr migration [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2757](https://github.com/community-scripts/ProxmoxVE/pull/2757))
+
+  - #### ✨ New Features
+
+    - ActualBudget: New Installation Script with new Repo [@MickLesk](https://github.com/MickLesk) ([#2770](https://github.com/community-scripts/ProxmoxVE/pull/2770))
+
+  - #### 💥 Breaking Changes
+
+    - Breaking: Remove Update Function for Actual Budget until it fixed [@MickLesk](https://github.com/MickLesk) ([#2768](https://github.com/community-scripts/ProxmoxVE/pull/2768))
+
+### 🧰 Maintenance
+
+  - #### 🐞 Bug Fixes
+
+    - Remove Note on Changelog [@MickLesk](https://github.com/MickLesk) ([#2758](https://github.com/community-scripts/ProxmoxVE/pull/2758))
+    - Fix Release Creation if Changelog.md to long [@MickLesk](https://github.com/MickLesk) ([#2752](https://github.com/community-scripts/ProxmoxVE/pull/2752))
+
+## 2025-02-28
+
+### 🧰 Maintenance
+
+  - #### ✨ New Features
+
+    - Shell Format Workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2400](https://github.com/community-scripts/ProxmoxVE/pull/2400))
+
+  - #### 📂 Github
+
+    - Update all Action to new selfhosted Runner Cluster [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2739](https://github.com/community-scripts/ProxmoxVE/pull/2739))
+    - Update Script Test Workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2741](https://github.com/community-scripts/ProxmoxVE/pull/2741))
+
+## 2025-02-27
+
+### 🆕 New Scripts
+
+  - web-check [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2662](https://github.com/community-scripts/ProxmoxVE/pull/2662))
+- Pelican Panel [@bvdberg01](https://github.com/bvdberg01) ([#2678](https://github.com/community-scripts/ProxmoxVE/pull/2678))
+- Pelican Wings [@bvdberg01](https://github.com/bvdberg01) ([#2677](https://github.com/community-scripts/ProxmoxVE/pull/2677))
+- ByteStash [@tremor021](https://github.com/tremor021) ([#2680](https://github.com/community-scripts/ProxmoxVE/pull/2680))
+
+### 🚀 Updated Scripts
+
+  - ByteStash: Removed sed, app supports Node v22 now [@tremor021](https://github.com/tremor021) ([#2728](https://github.com/community-scripts/ProxmoxVE/pull/2728))
+- Keycloak: Update installation script [@tremor021](https://github.com/tremor021) ([#2714](https://github.com/community-scripts/ProxmoxVE/pull/2714))
+- ByteStash: Fix Node 22 compatibility (thanks t2lc) [@tremor021](https://github.com/tremor021) ([#2705](https://github.com/community-scripts/ProxmoxVE/pull/2705))
+
+  - #### 🐞 Bug Fixes
+
+    - EOF not detected [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2726](https://github.com/community-scripts/ProxmoxVE/pull/2726))
+    - Zitadel-install.sh: Remove one version file and update to our standard [@bvdberg01](https://github.com/bvdberg01) ([#2710](https://github.com/community-scripts/ProxmoxVE/pull/2710))
+    - Outline: Change key to hex32 [@tremor021](https://github.com/tremor021) ([#2709](https://github.com/community-scripts/ProxmoxVE/pull/2709))
+    - Typo in update scripts [@bvdberg01](https://github.com/bvdberg01) ([#2707](https://github.com/community-scripts/ProxmoxVE/pull/2707))
+    - SFTPGo Remove unneeded RELEASE variable [@MickLesk](https://github.com/MickLesk) ([#2683](https://github.com/community-scripts/ProxmoxVE/pull/2683))
+
+### 🧰 Maintenance
+
+  - #### 🐞 Bug Fixes
+
+    - Update install.func: Change Line Number for Error message. [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2690](https://github.com/community-scripts/ProxmoxVE/pull/2690))
+
+  - #### 📂 Github
+
+    - New Workflow to close Script Request Discussions on PR merge [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2688](https://github.com/community-scripts/ProxmoxVE/pull/2688))
+    - Improve Script-Test Workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2712](https://github.com/community-scripts/ProxmoxVE/pull/2712))
+    - Switch all actions to self-hosted Runners [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2711](https://github.com/community-scripts/ProxmoxVE/pull/2711))
+
+### 🌐 Website
+
+  - #### ✨ New Features
+
+    - Use HTML button element for copying to clipboard [@scallaway](https://github.com/scallaway) ([#2720](https://github.com/community-scripts/ProxmoxVE/pull/2720))
+    - Add basic pagination to Data Viewer [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2715](https://github.com/community-scripts/ProxmoxVE/pull/2715))
+
+  - #### 📝 Script Information
+
+    - wger - Add HTTPS instructions to the website [@tremor021](https://github.com/tremor021) ([#2695](https://github.com/community-scripts/ProxmoxVE/pull/2695))
+
+## 2025-02-26
+
+### 🆕 New Scripts
+
+  - New Script: Outline [@tremor021](https://github.com/tremor021) ([#2653](https://github.com/community-scripts/ProxmoxVE/pull/2653))
+
+### 🚀 Updated Scripts
+
+  - Fix: SABnzbd - Removed few artefacts in the code preventing the update [@tremor021](https://github.com/tremor021) ([#2670](https://github.com/community-scripts/ProxmoxVE/pull/2670))
+
+  - #### 🐞 Bug Fixes
+
+    - Fix: Homarr - Manually correct db-migration wrong-folder [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2676](https://github.com/community-scripts/ProxmoxVE/pull/2676))
+    - Kimai: add local.yaml & fix path permissions [@MickLesk](https://github.com/MickLesk) ([#2646](https://github.com/community-scripts/ProxmoxVE/pull/2646))
+    - PiHole: Fix Unbound sed for DNS [@MickLesk](https://github.com/MickLesk) ([#2647](https://github.com/community-scripts/ProxmoxVE/pull/2647))
+    - Alpine IT-Tools fix typo "unexpected EOF while looking for matching `"' [@MickLesk](https://github.com/MickLesk) ([#2644](https://github.com/community-scripts/ProxmoxVE/pull/2644))
+
+### 🧰 Maintenance
+
+  - #### 📂 Github
+
+    - [gh] Furhter Impove Changelog Workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2655](https://github.com/community-scripts/ProxmoxVE/pull/2655))
+
+### 🌐 Website
+
+  - #### 🐞 Bug Fixes
+
+    - Website: PocketID Change of website and documentation links [@schneider-de-com](https://github.com/schneider-de-com) ([#2643](https://github.com/community-scripts/ProxmoxVE/pull/2643))
+
+  - #### 📝 Script Information
+
+    - Fix: Graylog - Improve application description for website [@tremor021](https://github.com/tremor021) ([#2658](https://github.com/community-scripts/ProxmoxVE/pull/2658))
+
+## 2025-02-25
+
+### Changes
+
+### ✨ New Features
+
+- Update Tailscale: Add Tag when installation is finished [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2633](https://github.com/community-scripts/ProxmoxVE/pull/2633))
+
+### 🚀 Updated Scripts
+
+  #### 🐞 Bug Fixes
+
+  - Fix Omada installer [@JcMinarro](https://github.com/JcMinarro) ([#2625](https://github.com/community-scripts/ProxmoxVE/pull/2625))
+
+### 🌐 Website
+
+- Update Tailscale-lxc Json: Add message for Supported OS [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2629](https://github.com/community-scripts/ProxmoxVE/pull/2629))
+
+### 🧰 Maintenance
+
+- [gh] Updated Changelog Workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2632](https://github.com/community-scripts/ProxmoxVE/pull/2632))
+
+## 2025-02-24
+
+### Changes
+
+### 🆕 New Scripts
+
+- New Script: wger [@tremor021](https://github.com/tremor021) ([#2574](https://github.com/community-scripts/ProxmoxVE/pull/2574))
+- New Script: VictoriaMetrics [@tremor021](https://github.com/tremor021) ([#2565](https://github.com/community-scripts/ProxmoxVE/pull/2565))
+- New Script: Authelia [@thost96](https://github.com/thost96) ([#2060](https://github.com/community-scripts/ProxmoxVE/pull/2060))
+- New Script: Jupyter Notebook [@Dave-code-creater](https://github.com/Dave-code-creater) ([#2561](https://github.com/community-scripts/ProxmoxVE/pull/2561))
+
+### 🐞 Bug Fixes
+
+- Fix Docmost: default upload size and saving data when updating [@bvdberg01](https://github.com/bvdberg01) ([#2598](https://github.com/community-scripts/ProxmoxVE/pull/2598))
+- Fix: homarr db migration [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2575](https://github.com/community-scripts/ProxmoxVE/pull/2575))
+- Fix: Wireguard - Restart wgdashboard automatically after update [@LostALice](https://github.com/LostALice) ([#2587](https://github.com/community-scripts/ProxmoxVE/pull/2587))
+- Fix: Authelia Unbound Variable Argon2id [@MickLesk](https://github.com/MickLesk) ([#2604](https://github.com/community-scripts/ProxmoxVE/pull/2604))
+- Fix: Omada check for AVX Support and use the correct MongoDB Version [@MickLesk](https://github.com/MickLesk) ([#2600](https://github.com/community-scripts/ProxmoxVE/pull/2600))
+- Fix: Update-Script Firefly III based on their docs [@MickLesk](https://github.com/MickLesk) ([#2534](https://github.com/community-scripts/ProxmoxVE/pull/2534))
+
+### ✨ New Features
+
+- Feature: Template-Check, Better Handling of Downloads, Better Network… [@MickLesk](https://github.com/MickLesk) ([#2592](https://github.com/community-scripts/ProxmoxVE/pull/2592))
+- Feature: Possibility to perform updates in silent / verbose (+ logging) [@MickLesk](https://github.com/MickLesk) ([#2583](https://github.com/community-scripts/ProxmoxVE/pull/2583))
+- Feature: Use Verbose Mode for all Scripts (removed &>/dev/null) [@MickLesk](https://github.com/MickLesk) ([#2596](https://github.com/community-scripts/ProxmoxVE/pull/2596))
+
+### 🌐 Website
+
+- Fix: Authelia - Make user enter their domain manually [@tremor021](https://github.com/tremor021) ([#2618](https://github.com/community-scripts/ProxmoxVE/pull/2618))
+- Website: Change Info for PiHole Password [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2602](https://github.com/community-scripts/ProxmoxVE/pull/2602))
+- Fix: Jupyter Json (missing logo & improve name on website) [@MickLesk](https://github.com/MickLesk) ([#2584](https://github.com/community-scripts/ProxmoxVE/pull/2584))
+
+### 🧰 Maintenance
+
+- [gh] Update Script Test Workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2599](https://github.com/community-scripts/ProxmoxVE/pull/2599))
+- [gh] Contributor-Guide: Update AppName.md & AppName.sh [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2603](https://github.com/community-scripts/ProxmoxVE/pull/2603))
+
+## 2025-02-23
+
+### Changes
+
+### 🆕 New Scripts
+
+- New Script: Hev socks5 server [@miviro](https://github.com/miviro) ([#2454](https://github.com/community-scripts/ProxmoxVE/pull/2454))
+- New Script: bolt.diy [@tremor021](https://github.com/tremor021) ([#2528](https://github.com/community-scripts/ProxmoxVE/pull/2528))
+
+### 🚀 Updated Scripts
+
+- Fix: Wireguard - Remove setting NAT as its already in PostUp/Down [@tremor021](https://github.com/tremor021) ([#2510](https://github.com/community-scripts/ProxmoxVE/pull/2510))
+
+### 🌐 Website
+
+- Fix: Home Assistant Core - fixed wrong text in application description on website [@TMigue](https://github.com/TMigue) ([#2576](https://github.com/community-scripts/ProxmoxVE/pull/2576))
+
+## 2025-02-22
+
+### Changes
+
+### 🌐 Website
+
+- Fix a few broken icon links [@Snarkenfaugister](https://github.com/Snarkenfaugister) ([#2548](https://github.com/community-scripts/ProxmoxVE/pull/2548))
+
+### 🧰 Maintenance
+
+- Fix: URL's in CONTRIBUTING.md [@bvdberg01](https://github.com/bvdberg01) ([#2552](https://github.com/community-scripts/ProxmoxVE/pull/2552))
+
+## 2025-02-21
+
+### Changes
+
+### 🚀 Updated Scripts
+
+- Add ZFS to Podman. Now it works on ZFS! [@jaminmc](https://github.com/jaminmc) ([#2526](https://github.com/community-scripts/ProxmoxVE/pull/2526))
+- Fix: Tianji - Downgrade Node [@MickLesk](https://github.com/MickLesk) ([#2530](https://github.com/community-scripts/ProxmoxVE/pull/2530))
+
+### 🧰 Maintenance
+
+- [gh] General Cleanup & Moving Files / Folders [@MickLesk](https://github.com/MickLesk) ([#2532](https://github.com/community-scripts/ProxmoxVE/pull/2532))
+
+## 2025-02-20
+
+### Changes
+
+### 💥 Breaking Changes
+
+- Breaking: Actual Budget Script (HTTPS / DB Migration / New Structure) - Read Description [@MickLesk](https://github.com/MickLesk) ([#2496](https://github.com/community-scripts/ProxmoxVE/pull/2496))
+- Pihole & Unbound: Installation for Pihole V6 (read description) [@MickLesk](https://github.com/MickLesk) ([#2505](https://github.com/community-scripts/ProxmoxVE/pull/2505))
+
+### ✨ New Scripts
+
+- New Script: Dolibarr [@tremor021](https://github.com/tremor021) ([#2502](https://github.com/community-scripts/ProxmoxVE/pull/2502))
+
+### 🚀 Updated Scripts
+
+- Fix: Pingvin Share - Update not copying to correct directory [@tremor021](https://github.com/tremor021) ([#2521](https://github.com/community-scripts/ProxmoxVE/pull/2521))
+- WikiJS: Prepare for Using PostgreSQL [@MickLesk](https://github.com/MickLesk) ([#2516](https://github.com/community-scripts/ProxmoxVE/pull/2516))
+
+### 🧰 Maintenance
+
+- [gh] better handling of labels [@MickLesk](https://github.com/MickLesk) ([#2517](https://github.com/community-scripts/ProxmoxVE/pull/2517))
+
+## 2025-02-19
+
+### Changes
+
+### 🚀 Updated Scripts
+
+- Fix: file replacement in Watcharr Update Script [@Clusters](https://github.com/Clusters) ([#2498](https://github.com/community-scripts/ProxmoxVE/pull/2498))
+- Fix: Kometa - fixed successful setup message and added info to json [@tremor021](https://github.com/tremor021) ([#2495](https://github.com/community-scripts/ProxmoxVE/pull/2495))
+- Fix: Actual Budget, add missing .env when updating [@MickLesk](https://github.com/MickLesk) ([#2494](https://github.com/community-scripts/ProxmoxVE/pull/2494))
+
+## 2025-02-18
+
+### Changes
+
+### ✨ New Scripts
+
+- New Script: Docmost [@MickLesk](https://github.com/MickLesk) ([#2472](https://github.com/community-scripts/ProxmoxVE/pull/2472))
+
+### 🚀 Updated Scripts
+
+- Fix: SQL Server 2022 | GPG & Install [@MickLesk](https://github.com/MickLesk) ([#2476](https://github.com/community-scripts/ProxmoxVE/pull/2476))
+- Feature: PBS Bare Metal Installation - Allow Microcode [@MickLesk](https://github.com/MickLesk) ([#2477](https://github.com/community-scripts/ProxmoxVE/pull/2477))
+- Fix: MagicMirror force Node version and fix backups [@tremor021](https://github.com/tremor021) ([#2468](https://github.com/community-scripts/ProxmoxVE/pull/2468))
+- Update BunkerWeb scripts to latest NGINX and specs [@TheophileDiot](https://github.com/TheophileDiot) ([#2466](https://github.com/community-scripts/ProxmoxVE/pull/2466))
+
+## 2025-02-17
+
+### Changes
+
+### 💥 Breaking Changes
+
+- Zipline: Prepare for Version 4.0.0 [@MickLesk](https://github.com/MickLesk) ([#2455](https://github.com/community-scripts/ProxmoxVE/pull/2455))
+
+### 🚀 Updated Scripts
+
+- Fix: Zipline increase SECRET to 42 chars [@V1d1o7](https://github.com/V1d1o7) ([#2444](https://github.com/community-scripts/ProxmoxVE/pull/2444))
+
+## 2025-02-16
+
+### Changes
+
+### 🚀 Updated Scripts
+
+- Fix: Typo in Ubuntu 24.10 VM Script [@PhoenixEmik](https://github.com/PhoenixEmik) ([#2430](https://github.com/community-scripts/ProxmoxVE/pull/2430))
+- Fix: Grist update no longer removes previous user data [@cfurrow](https://github.com/cfurrow) ([#2428](https://github.com/community-scripts/ProxmoxVE/pull/2428))
+
+### 🌐 Website
+
+- Debian icon update [@bannert1337](https://github.com/bannert1337) ([#2433](https://github.com/community-scripts/ProxmoxVE/pull/2433))
+- Update Graylog icon [@bannert1337](https://github.com/bannert1337) ([#2434](https://github.com/community-scripts/ProxmoxVE/pull/2434))
+
+## 2025-02-15
+
+### Changes
+
+### 🚀 Updated Scripts
+
+- Setup cron in install/freshrss-install.sh [@zimmra](https://github.com/zimmra) ([#2412](https://github.com/community-scripts/ProxmoxVE/pull/2412))
+- Fix: Homarr update service files [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2416](https://github.com/community-scripts/ProxmoxVE/pull/2416))
+- Update MagicMirror install and update scripts [@tremor021](https://github.com/tremor021) ([#2409](https://github.com/community-scripts/ProxmoxVE/pull/2409))
+
+### 🌐 Website
+
+- Fix RustDesk slug in json [@tremor021](https://github.com/tremor021) ([#2411](https://github.com/community-scripts/ProxmoxVE/pull/2411))
+
+### 🧰 Maintenance
+
+- [GH] Update script-test Workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2415](https://github.com/community-scripts/ProxmoxVE/pull/2415))
+
+## 2025-02-14
+
+### Changes
+
+### 🚀 Updated Scripts
+
+- Fix homarr [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2369](https://github.com/community-scripts/ProxmoxVE/pull/2369))
+
+### 🌐 Website
+
+- RustDesk Server - Added configuration guide to json [@tremor021](https://github.com/tremor021) ([#2389](https://github.com/community-scripts/ProxmoxVE/pull/2389))
+
+### 🧰 Maintenance
+
+- [gh] Update script-test.yml [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2399](https://github.com/community-scripts/ProxmoxVE/pull/2399))
+- [gh] Introducing new Issue Github Template Feature (Bug, Feature, Task) [@MickLesk](https://github.com/MickLesk) ([#2394](https://github.com/community-scripts/ProxmoxVE/pull/2394))
+
+### 📡 API
+
+- [API]Add more enpoints to API [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2390](https://github.com/community-scripts/ProxmoxVE/pull/2390))
+- [API] Update api.func: Remove unwanted file creation [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2378](https://github.com/community-scripts/ProxmoxVE/pull/2378))
+
+## 2025-02-13
+
+### Changes
+
+### ✨ New Scripts
+
+- Re-Add: Pf2eTools [@MickLesk](https://github.com/MickLesk) ([#2336](https://github.com/community-scripts/ProxmoxVE/pull/2336))
+- New Script: Nx Witness [@MickLesk](https://github.com/MickLesk) ([#2350](https://github.com/community-scripts/ProxmoxVE/pull/2350))
+- New Script: RustDesk Server [@tremor021](https://github.com/tremor021) ([#2326](https://github.com/community-scripts/ProxmoxVE/pull/2326))
+- New Script: MinIO [@MickLesk](https://github.com/MickLesk) ([#2333](https://github.com/community-scripts/ProxmoxVE/pull/2333))
+
+### 🚀 Updated Scripts
+
+- Missing ";" in ct/trilium.sh [@Scorpoon](https://github.com/Scorpoon) ([#2380](https://github.com/community-scripts/ProxmoxVE/pull/2380))
+- Fix: Element Synapse - Fixed server listening on both localhost and 0.0.0.0 [@tremor021](https://github.com/tremor021) ([#2376](https://github.com/community-scripts/ProxmoxVE/pull/2376))
+- [core] cleanup (remove # App Default Values) [@MickLesk](https://github.com/MickLesk) ([#2356](https://github.com/community-scripts/ProxmoxVE/pull/2356))
+- Fix: Kometa - Increase RAM and HDD resources [@tremor021](https://github.com/tremor021) ([#2367](https://github.com/community-scripts/ProxmoxVE/pull/2367))
+- [core] cleanup (remove base_settings & unneeded comments) [@MickLesk](https://github.com/MickLesk) ([#2351](https://github.com/community-scripts/ProxmoxVE/pull/2351))
+- Fix: Authentik Embedded Outpost Upgrade [@vidonnus](https://github.com/vidonnus) ([#2327](https://github.com/community-scripts/ProxmoxVE/pull/2327))
+- Fix HomeAsisstant LXC: Use the latest versions of runlike with --use-volume-id [@genehand](https://github.com/genehand) ([#2325](https://github.com/community-scripts/ProxmoxVE/pull/2325))
+
+### 🌐 Website
+
+- Fix: Zoraxy - now shows application as updateable on the website [@tremor021](https://github.com/tremor021) ([#2352](https://github.com/community-scripts/ProxmoxVE/pull/2352))
+- Fix script category name text alignment in ScriptAccordion [@BramSuurdje](https://github.com/BramSuurdje) ([#2342](https://github.com/community-scripts/ProxmoxVE/pull/2342))
+
+### 🧰 Maintenance
+
+- [gh] Remove unwanted output from script test workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2337](https://github.com/community-scripts/ProxmoxVE/pull/2337))
+- [gh] Workflow to change date on new json files [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2319](https://github.com/community-scripts/ProxmoxVE/pull/2319))
+
+## 2025-02-12
+
+### Changes
+
+### 💥 Breaking Changes
+
+- Frigate: Use Fixed Version 14 [@MickLesk](https://github.com/MickLesk) ([#2288](https://github.com/community-scripts/ProxmoxVE/pull/2288))
+
+### ✨ New Scripts
+
+- New Script: Kometa [@tremor021](https://github.com/tremor021) ([#2281](https://github.com/community-scripts/ProxmoxVE/pull/2281))
+- New Script: Excalidraw [@tremor021](https://github.com/tremor021) ([#2285](https://github.com/community-scripts/ProxmoxVE/pull/2285))
+- New Script: Graylog [@tremor021](https://github.com/tremor021) ([#2270](https://github.com/community-scripts/ProxmoxVE/pull/2270))
+- New Script: TasmoCompiler [@tremor021](https://github.com/tremor021) ([#2235](https://github.com/community-scripts/ProxmoxVE/pull/2235))
+- New script: cross-seed [@jmatraszek](https://github.com/jmatraszek) ([#2186](https://github.com/community-scripts/ProxmoxVE/pull/2186))
+
+### 🚀 Updated Scripts
+
+- FIX: Frigate - remove bad variable [@tremor021](https://github.com/tremor021) ([#2323](https://github.com/community-scripts/ProxmoxVE/pull/2323))
+- Fix: Kometa - Fix wrong web site address [@tremor021](https://github.com/tremor021) ([#2318](https://github.com/community-scripts/ProxmoxVE/pull/2318))
+- Fix: var_tags instead of TAGS in some CT's [@MickLesk](https://github.com/MickLesk) ([#2310](https://github.com/community-scripts/ProxmoxVE/pull/2310))
+- Update ubuntu2410-vm.sh: Fix typo in API call. [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2305](https://github.com/community-scripts/ProxmoxVE/pull/2305))
+- Fix: Myspeed Installation (g++) [@MickLesk](https://github.com/MickLesk) ([#2308](https://github.com/community-scripts/ProxmoxVE/pull/2308))
+- Fix: Pingvin wrong variable used for version tracking [@alberanid](https://github.com/alberanid) ([#2302](https://github.com/community-scripts/ProxmoxVE/pull/2302))
+- Fix: SQL Server 2022 - remove unnecessary sudo [@tremor021](https://github.com/tremor021) ([#2282](https://github.com/community-scripts/ProxmoxVE/pull/2282))
+- fix: frigate pin version [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2296](https://github.com/community-scripts/ProxmoxVE/pull/2296))
+- Fix changedetection: Correct Browser install [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2277](https://github.com/community-scripts/ProxmoxVE/pull/2277))
+- Paperless-AI: add dependency "make" [@MickLesk](https://github.com/MickLesk) ([#2289](https://github.com/community-scripts/ProxmoxVE/pull/2289))
+- Fix: Typo OPNsense VM [@chpego](https://github.com/chpego) ([#2291](https://github.com/community-scripts/ProxmoxVE/pull/2291))
+- Fix: CraftyControler fix java default [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2286](https://github.com/community-scripts/ProxmoxVE/pull/2286))
+
+### 🌐 Website
+
+- Fix: some jsons (debian instead Debian in OS) [@MickLesk](https://github.com/MickLesk) ([#2311](https://github.com/community-scripts/ProxmoxVE/pull/2311))
+- Website: Add After-Install Note for Ubuntu VM 22.04/24.04/24.10 and Debian VM [@MickLesk](https://github.com/MickLesk) ([#2307](https://github.com/community-scripts/ProxmoxVE/pull/2307))
+- Fix: duplicate 'VM' name in opnsense-vm.json [@nayzm](https://github.com/nayzm) ([#2293](https://github.com/community-scripts/ProxmoxVE/pull/2293))
+
+## 2025-02-11
+
+### Changes
+
+### ✨ New Scripts
+
+- New Script: Opnsense VM [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2097](https://github.com/community-scripts/ProxmoxVE/pull/2097))
+- New Script: Watcharr [@tremor021](https://github.com/tremor021) ([#2243](https://github.com/community-scripts/ProxmoxVE/pull/2243))
+- New Script: Suwayomi-Server [@tremor021](https://github.com/tremor021) ([#2139](https://github.com/community-scripts/ProxmoxVE/pull/2139))
+
+### 🚀 Updated Scripts
+
+- Fix Photoprism: Add defaults.yml for CLI Tool [@MickLesk](https://github.com/MickLesk) ([#2261](https://github.com/community-scripts/ProxmoxVE/pull/2261))
+- Update Checkmk: include Patch versions in Release grepping [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2264](https://github.com/community-scripts/ProxmoxVE/pull/2264))
+- Fix: Apache Guacamole Version Crawling - only latest Version [@MickLesk](https://github.com/MickLesk) ([#2258](https://github.com/community-scripts/ProxmoxVE/pull/2258))
+
+### 🌐 Website
+
+- Update Komodo icon [@bannert1337](https://github.com/bannert1337) ([#2263](https://github.com/community-scripts/ProxmoxVE/pull/2263))
+
+### 🧰 Maintenance
+
+- Add Workflow to test Scripts [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2269](https://github.com/community-scripts/ProxmoxVE/pull/2269))
+
+## 2025-02-10
+
+### Changes
+
+### 💥 Breaking Changes
+
+- [Fix] Filebrowser - Add Static Path for DB [@MickLesk](https://github.com/MickLesk) ([#2207](https://github.com/community-scripts/ProxmoxVE/pull/2207))
+
+### ✨ New Scripts
+
+- New Script: Prometheus Paperless-NGX Exporter [@andygrunwald](https://github.com/andygrunwald) ([#2153](https://github.com/community-scripts/ProxmoxVE/pull/2153))
+- New Script: Proxmox Mail Gateway [@thost96](https://github.com/thost96) ([#1906](https://github.com/community-scripts/ProxmoxVE/pull/1906))
+- New Script: FreshRSS [@bvdberg01](https://github.com/bvdberg01) ([#2226](https://github.com/community-scripts/ProxmoxVE/pull/2226))
+- New Script: Zitadel [@dave-yap](https://github.com/dave-yap) ([#2141](https://github.com/community-scripts/ProxmoxVE/pull/2141))
+
+### 🚀 Updated Scripts
+
+- Feature: Automatic Deletion of choosen LXC's (lxc-delete.sh) [@MickLesk](https://github.com/MickLesk) ([#2228](https://github.com/community-scripts/ProxmoxVE/pull/2228))
+- Quickfix: Crafty-Controller remove unnecessary \ [@MickLesk](https://github.com/MickLesk) ([#2233](https://github.com/community-scripts/ProxmoxVE/pull/2233))
+- Fix: Crafty-Controller java versions and set default [@CrazyWolf13](https://github.com/CrazyWolf13) ([#2199](https://github.com/community-scripts/ProxmoxVE/pull/2199))
+- Feature: Add optional Port for Filebrowser [@MickLesk](https://github.com/MickLesk) ([#2224](https://github.com/community-scripts/ProxmoxVE/pull/2224))
+- [core] Prevent double spinner [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2203](https://github.com/community-scripts/ProxmoxVE/pull/2203))
+
+### 🌐 Website
+
+- Website: Fix Zitadel Logo & Created-Date [@MickLesk](https://github.com/MickLesk) ([#2217](https://github.com/community-scripts/ProxmoxVE/pull/2217))
+- Fixed URL typo zerotier-one.json [@Divaksh](https://github.com/Divaksh) ([#2206](https://github.com/community-scripts/ProxmoxVE/pull/2206))
+- evcc.json Clarify the config file location [@mvdw](https://github.com/mvdw) ([#2193](https://github.com/community-scripts/ProxmoxVE/pull/2193))
+
+### 🧰 Maintenance
+
+- [gh]: Improve Workflows, Templates, Handling [@MickLesk](https://github.com/MickLesk) ([#2214](https://github.com/community-scripts/ProxmoxVE/pull/2214))
+- [core] Fix app-header workflow and add API [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2204](https://github.com/community-scripts/ProxmoxVE/pull/2204))
+- Fix: "read -p" does not support color formatting [@PhoenixEmik](https://github.com/PhoenixEmik) ([#2191](https://github.com/community-scripts/ProxmoxVE/pull/2191))
+- [API] Add API to vms [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2021](https://github.com/community-scripts/ProxmoxVE/pull/2021))
+
+## 2025-02-09
+
+### Changed
+
+### ✨ New Scripts
+
+- New Script: pbs_microcode.sh [@DonPablo1010](https://github.com/DonPablo1010) ([#2166](https://github.com/community-scripts/ProxmoxVE/pull/2166))
+
+### 🚀 Updated Scripts
+
+- Keep the same hass_config volume for Home Assistant [@genehand](https://github.com/genehand) ([#2160](https://github.com/community-scripts/ProxmoxVE/pull/2160))
+
+### 🌐 Website
+
+- Website: Set new Logo for Paperless-AI [@MickLesk](https://github.com/MickLesk) ([#2194](https://github.com/community-scripts/ProxmoxVE/pull/2194))
+- Fix: Barcode Buddy Logo & Title [@MickLesk](https://github.com/MickLesk) ([#2183](https://github.com/community-scripts/ProxmoxVE/pull/2183))
+
+## 2025-02-08
+
+### Changed
+
+### ✨ New Scripts
+
+- New script: Barcode Buddy [@bvdberg01](https://github.com/bvdberg01) ([#2167](https://github.com/community-scripts/ProxmoxVE/pull/2167))
+
+### 🚀 Updated Scripts
+
+- Fix: Actualbudget - salvage the `.migrate` file when upgrading [@bourquep](https://github.com/bourquep) ([#2173](https://github.com/community-scripts/ProxmoxVE/pull/2173))
+
+### 🌐 Website
+
+- Update cosmos.json description [@BramSuurdje](https://github.com/BramSuurdje) ([#2162](https://github.com/community-scripts/ProxmoxVE/pull/2162))
+
+### 🧰 Maintenance
+
+- fix typos in CONTRIBUTOR_GUIDE [@thomashondema](https://github.com/thomashondema) ([#2174](https://github.com/community-scripts/ProxmoxVE/pull/2174))
+
+## 2025-02-07 - 10.000 ⭐
+
+### Changed
+
+### 💥 Breaking Changes
+
+- [core]: Enhance LXC template handling and improve error recovery [@MickLesk](https://github.com/MickLesk) ([#2128](https://github.com/community-scripts/ProxmoxVE/pull/2128))
+
+### ✨ New Scripts
+
+- New Script: Cosmos [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2120](https://github.com/community-scripts/ProxmoxVE/pull/2120))
+- New Script: SearXNG [@MickLesk](https://github.com/MickLesk) ([#2123](https://github.com/community-scripts/ProxmoxVE/pull/2123))
+
+### 🚀 Updated Scripts
+
+- Fix: Trillium Update Function & Harmonize Installation [@MickLesk](https://github.com/MickLesk) ([#2148](https://github.com/community-scripts/ProxmoxVE/pull/2148))
+- Fix: Zerotier-One fixed missing dependency [@tremor021](https://github.com/tremor021) ([#2147](https://github.com/community-scripts/ProxmoxVE/pull/2147))
+- Fix: Openwrt Version checking [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2137](https://github.com/community-scripts/ProxmoxVE/pull/2137))
+- Fix: PeaNUT Increase HDD & RAM Size [@MickLesk](https://github.com/MickLesk) ([#2127](https://github.com/community-scripts/ProxmoxVE/pull/2127))
+
+### 🌐 Website
+
+- Fix: Zerotier json had a bad script path [@tremor021](https://github.com/tremor021) ([#2144](https://github.com/community-scripts/ProxmoxVE/pull/2144))
+- Fix: Cosmos logo doesnt display on website [@MickLesk](https://github.com/MickLesk) ([#2132](https://github.com/community-scripts/ProxmoxVE/pull/2132))
+- Fix JSON-Editor [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2121](https://github.com/community-scripts/ProxmoxVE/pull/2121))
+
+### 🧰 Maintenance
+
+- [gh]: Following the trend - add star-history in readme [@MickLesk](https://github.com/MickLesk) ([#2135](https://github.com/community-scripts/ProxmoxVE/pull/2135))
+
+## 2025-02-06
+
+### Changed
+
+### ✨ New Scripts
+
+- New Script: Duplicati [@tremor021](https://github.com/tremor021) ([#2052](https://github.com/community-scripts/ProxmoxVE/pull/2052))
+- New Script: Paperless-AI [@MickLesk](https://github.com/MickLesk) ([#2093](https://github.com/community-scripts/ProxmoxVE/pull/2093))
+- New Script: Apache Tika [@andygrunwald](https://github.com/andygrunwald) ([#2079](https://github.com/community-scripts/ProxmoxVE/pull/2079))
+
+### 🚀 Updated Scripts
+
+- Fix: Alpine IT-Tools Update [@MickLesk](https://github.com/MickLesk) ([#2067](https://github.com/community-scripts/ProxmoxVE/pull/2067))
+- Fix: Pocket-ID Change link to GH Repo [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2082](https://github.com/community-scripts/ProxmoxVE/pull/2082))
+
+### 🌐 Website
+
+- Refactor JSON generator buttons layout for better alignment and consistency [@BramSuurdje](https://github.com/BramSuurdje) ([#2106](https://github.com/community-scripts/ProxmoxVE/pull/2106))
+- Website: Refactor Footer for improved layout and styling consistency [@BramSuurdje](https://github.com/BramSuurdje) ([#2107](https://github.com/community-scripts/ProxmoxVE/pull/2107))
+- Website: Update Footer for Json-Editor & Api [@MickLesk](https://github.com/MickLesk) ([#2100](https://github.com/community-scripts/ProxmoxVE/pull/2100))
+- Website: Add Download for json-editor [@MickLesk](https://github.com/MickLesk) ([#2099](https://github.com/community-scripts/ProxmoxVE/pull/2099))
+- Radicale: Provide additional information about configuration [@tremor021](https://github.com/tremor021) ([#2072](https://github.com/community-scripts/ProxmoxVE/pull/2072))
+
+## 2025-02-05
+
+### Changed
+
+### ✨ New Scripts
+
+- New Script: Zerotier Controller [@tremor021](https://github.com/tremor021) ([#1928](https://github.com/community-scripts/ProxmoxVE/pull/1928))
+- New Script: Radicale [@tremor021](https://github.com/tremor021) ([#1941](https://github.com/community-scripts/ProxmoxVE/pull/1941))
+- New Script: seelf [@tremor021](https://github.com/tremor021) ([#2023](https://github.com/community-scripts/ProxmoxVE/pull/2023))
+- New Script: Crafty-Controller [@CrazyWolf13](https://github.com/CrazyWolf13) ([#1926](https://github.com/community-scripts/ProxmoxVE/pull/1926))
+- New script: Koillection [@bvdberg01](https://github.com/bvdberg01) ([#2031](https://github.com/community-scripts/ProxmoxVE/pull/2031))
+
+### 🚀 Updated Scripts
+
+- Bugfix: Jellyseerr pnpm Version [@vidonnus](https://github.com/vidonnus) ([#2033](https://github.com/community-scripts/ProxmoxVE/pull/2033))
+- Radicale: Fixed missing htpasswd flag [@tremor021](https://github.com/tremor021) ([#2065](https://github.com/community-scripts/ProxmoxVE/pull/2065))
+- [API] Update build.func / Improve error messages #2 [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2050](https://github.com/community-scripts/ProxmoxVE/pull/2050))
+- [API] Update create-lxc.sh / Improve error messages #1 [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2049](https://github.com/community-scripts/ProxmoxVE/pull/2049))
+- Feature: Element Synapse: add option to enter server name during LXC installation [@tremor021](https://github.com/tremor021) ([#2038](https://github.com/community-scripts/ProxmoxVE/pull/2038))
+
+### 🌐 Website
+
+- Paperless NGX: Mark it as updateable [@andygrunwald](https://github.com/andygrunwald) ([#2070](https://github.com/community-scripts/ProxmoxVE/pull/2070))
+- Bump vitest from 2.1.6 to 2.1.9 in /frontend [@dependabot[bot]](https://github.com/dependabot[bot]) ([#2042](https://github.com/community-scripts/ProxmoxVE/pull/2042))
+
+### 🧰 Maintenance
+
+- [API] Add API backend code [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2040](https://github.com/community-scripts/ProxmoxVE/pull/2040))
+- Update auto-update-app-headers.yml: Enable auto approval [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2057](https://github.com/community-scripts/ProxmoxVE/pull/2057))
+
+## 2025-02-04
+
+### Changed
+
+### 💥 Breaking Changes
+
+- Rename & Optimize: Proxmox Backup Server (Renaming & Update fix) [@thost96](https://github.com/thost96) ([#2012](https://github.com/community-scripts/ProxmoxVE/pull/2012))
+
+### 🚀 Updated Scripts
+
+- Fix: Authentik - Remove deprecated GO-Remove in Footer [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2020](https://github.com/community-scripts/ProxmoxVE/pull/2020))
+- Fix: Authentik Fix wrong HDD Size [@thost96](https://github.com/thost96) ([#2001](https://github.com/community-scripts/ProxmoxVE/pull/2001))
+- Fix: Tandoor - node Version [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#2010](https://github.com/community-scripts/ProxmoxVE/pull/2010))
+- Fix actual update - missing hidden files, downloaded release cleanup [@maciejmatczak](https://github.com/maciejmatczak) ([#2027](https://github.com/community-scripts/ProxmoxVE/pull/2027))
+- Fix Script: post-pmg-install.sh [@thost96](https://github.com/thost96) ([#2022](https://github.com/community-scripts/ProxmoxVE/pull/2022))
+- Fix Tianji: Add heap-space value for nodejs [@MickLesk](https://github.com/MickLesk) ([#2011](https://github.com/community-scripts/ProxmoxVE/pull/2011))
+- Fix: Ghost LXC - Use Node20 [@MickLesk](https://github.com/MickLesk) ([#2006](https://github.com/community-scripts/ProxmoxVE/pull/2006))
+
+### 🌐 Website
+
+- [API] Massive update to api (remove many, optimize website for users) [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#1990](https://github.com/community-scripts/ProxmoxVE/pull/1990))
+
+### 🧰 Maintenance
+
+- Fix header comments on contributor templates [@tremor021](https://github.com/tremor021) ([#2029](https://github.com/community-scripts/ProxmoxVE/pull/2029))
+- [Fix]: Headername of Proxmox-Datacenter-Manager not in CamelCase [@MickLesk](https://github.com/MickLesk) ([#2017](https://github.com/community-scripts/ProxmoxVE/pull/2017))
+- [Fix] Header breaks at long title - add width for figlet github action [@MickLesk](https://github.com/MickLesk) ([#2015](https://github.com/community-scripts/ProxmoxVE/pull/2015))
+
+## 2025-02-03
+
+### Changed
+
+### ✨ New Scripts
+
+- New Script: Element Synapse [@tremor021](https://github.com/tremor021) ([#1955](https://github.com/community-scripts/ProxmoxVE/pull/1955))
+- New Script: Privatebin [@opastorello](https://github.com/opastorello) ([#1925](https://github.com/community-scripts/ProxmoxVE/pull/1925))
+
+### 🚀 Updated Scripts
+
+- Fix: Monica Install with nodejs [@MickLesk](https://github.com/MickLesk) ([#1996](https://github.com/community-scripts/ProxmoxVE/pull/1996))
+- Element Synapse sed fix [@tremor021](https://github.com/tremor021) ([#1994](https://github.com/community-scripts/ProxmoxVE/pull/1994))
+- Fix Hoarder corepack install/update error [@vhsdream](https://github.com/vhsdream) ([#1957](https://github.com/community-scripts/ProxmoxVE/pull/1957))
+- [Security & Maintenance] Update NodeJS Repo to 22 for new Installs [@MickLesk](https://github.com/MickLesk) ([#1984](https://github.com/community-scripts/ProxmoxVE/pull/1984))
+- [Standardization]: Same Setup for GoLang on all LXC's & Clear Tarball [@MickLesk](https://github.com/MickLesk) ([#1977](https://github.com/community-scripts/ProxmoxVE/pull/1977))
+- Feature: urbackupserver Include fuse&nesting features during install [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#1968](https://github.com/community-scripts/ProxmoxVE/pull/1968))
+- Fix: MSSQL-Server: Better gpg handling [@MickLesk](https://github.com/MickLesk) ([#1962](https://github.com/community-scripts/ProxmoxVE/pull/1962))
+- Fix: Grist ran into a heap space during the update [@MickLesk](https://github.com/MickLesk) ([#1964](https://github.com/community-scripts/ProxmoxVE/pull/1964))
+- Fix: FS-Trim Cancel / Error-Button [@MickLesk](https://github.com/MickLesk) ([#1965](https://github.com/community-scripts/ProxmoxVE/pull/1965))
+- Fix: Increase HDD Space for Hoarder [@MickLesk](https://github.com/MickLesk) ([#1970](https://github.com/community-scripts/ProxmoxVE/pull/1970))
+- Feature: Clean Orphan LVM without CEPH [@MickLesk](https://github.com/MickLesk) ([#1974](https://github.com/community-scripts/ProxmoxVE/pull/1974))
+- [Standardization] Fix Spelling for "Setup Python3"  [@MickLesk](https://github.com/MickLesk) ([#1975](https://github.com/community-scripts/ProxmoxVE/pull/1975))
+
+### 🌐 Website
+
+- [Website] update data/page.tsx [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#1969](https://github.com/community-scripts/ProxmoxVE/pull/1969))
+- Prometheus Proxmox VE Exporter: Set correct website slug [@andygrunwald](https://github.com/andygrunwald) ([#1961](https://github.com/community-scripts/ProxmoxVE/pull/1961))
+
+### 🧰 Maintenance
+
+- [API] Remove Hostname, Verbose, SSH and TAGS [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#1967](https://github.com/community-scripts/ProxmoxVE/pull/1967))
+
+## 2025-02-02
+
+### Changed
+
+### 🚀 Updated Scripts
+
+- Prometheus PVE Exporter: Add `--default-timeout=300` to pip install commands [@andygrunwald](https://github.com/andygrunwald) ([#1950](https://github.com/community-scripts/ProxmoxVE/pull/1950))
+- fix z2m update function to 2.1.0 [@MickLesk](https://github.com/MickLesk) ([#1938](https://github.com/community-scripts/ProxmoxVE/pull/1938))
+
+### 🧰 Maintenance
+
+- VSCode: Add Shellscript Syntax highlighting for *.func files [@andygrunwald](https://github.com/andygrunwald) ([#1948](https://github.com/community-scripts/ProxmoxVE/pull/1948))
+
+## 2025-02-01
+
+### Changed
+
+### 💥 Breaking Changes
+
+- [DCMA] Delete scripts 5etools and pf2etools - Copyright abuse [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#1922](https://github.com/community-scripts/ProxmoxVE/pull/1922))
+
+### ✨ New Scripts
+
+- New script: Baïkal [@bvdberg01](https://github.com/bvdberg01) ([#1913](https://github.com/community-scripts/ProxmoxVE/pull/1913))
+
+### 🚀 Updated Scripts
+
+- Bug fix: Paymenter [@opastorello](https://github.com/opastorello) ([#1917](https://github.com/community-scripts/ProxmoxVE/pull/1917))
 
 ## 2025-01-31
 
@@ -1221,7 +2910,7 @@ Do not break established syntax in this file, as it is automatically updated by 
 - **Automatic Update of Repository:** The update function now uses the new repository `community-scripts/ProxmoxVE` for Debian/Ubuntu LXC containers.
   
   ```bash
-  bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/misc/update-repo.sh)"
+  bash -c "$(curl -fsSL https://github.com/community-scripts/ProxmoxVE/raw/main/misc/update-repo.sh)"
 
 ## 2024-10-31
 

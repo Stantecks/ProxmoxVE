@@ -1,24 +1,19 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://linkwarden.app/
 
-# App Default Values
 APP="Linkwarden"
-var_tags="bookmark"
-var_cpu="2"
-var_ram="2048"
-var_disk="12"
-var_os="ubuntu"
-var_version="22.04"
+var_tags="${var_tags:-bookmark}"
+var_cpu="${var_cpu:-2}"
+var_ram="${var_ram:-2048}"
+var_disk="${var_disk:-12}"
+var_os="${var_os:-ubuntu}"
+var_version="${var_version:-22.04}"
 
-# App Output & Base Settings
 header_info "$APP"
-base_settings
-
-# Core
 variables
 color
 catch_errors
@@ -31,27 +26,36 @@ function update_script() {
     msg_error "No ${APP} Installation Found!"
     exit
   fi
-  RELEASE=$(curl -s https://api.github.com/repos/linkwarden/linkwarden/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+  RELEASE=$(curl -fsSL https://api.github.com/repos/linkwarden/linkwarden/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
   if [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]] || [[ ! -f /opt/${APP}_version.txt ]]; then
     msg_info "Stopping ${APP}"
     systemctl stop linkwarden
     msg_ok "Stopped ${APP}"
 
+    msg_info "Updating Rust"
+    $STD apt-get install -y build-essential
+    $STD curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    source $HOME/.cargo/env
+    echo 'export PATH=/usr/local/cargo/bin:$PATH' >>/etc/profile
+    source /etc/profile
+    $STD cargo install monolith
+    msg_ok "Updated Rust"
+
     msg_info "Updating ${APP} to ${RELEASE}"
     cd /opt
     mv /opt/linkwarden/.env /opt/.env
     rm -rf /opt/linkwarden
-    RELEASE=$(curl -s https://api.github.com/repos/linkwarden/linkwarden/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
-    wget -q "https://github.com/linkwarden/linkwarden/archive/refs/tags/${RELEASE}.zip"
+    RELEASE=$(curl -fsSL https://api.github.com/repos/linkwarden/linkwarden/releases/latest | grep "tag_name" | awk '{print substr($2, 2, length($2)-3) }')
+    curl -fsSL "https://github.com/linkwarden/linkwarden/archive/refs/tags/${RELEASE}.zip" -o $(basename "https://github.com/linkwarden/linkwarden/archive/refs/tags/${RELEASE}.zip")
     unzip -q ${RELEASE}.zip
     mv linkwarden-${RELEASE:1} /opt/linkwarden
     cd /opt/linkwarden
-    yarn &>/dev/null
-    npx playwright install-deps &>/dev/null
-    yarn playwright install &>/dev/null
+    $STD yarn
+    $STD npx playwright install-deps
+    $STD yarn playwright install
     cp /opt/.env /opt/linkwarden/.env
-    yarn build &>/dev/null
-    yarn prisma migrate deploy &>/dev/null
+    $STD yarn build
+    $STD yarn prisma migrate deploy
     echo "${RELEASE}" >/opt/${APP}_version.txt
     msg_ok "Updated ${APP} to ${RELEASE}"
 

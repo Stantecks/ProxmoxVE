@@ -2,10 +2,10 @@
 
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
-# License: MIT
-# https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
+# Source: https://www.photoprism.app/
 
-source /dev/stdin <<< "$FUNCTIONS_FILE_PATH"
+source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
 catch_errors
@@ -15,9 +15,6 @@ update_os
 
 msg_info "Installing Dependencies (Patience)"
 $STD apt-get install -y \
-    curl \
-    sudo \
-    mc \
     exiftool \
     ffmpeg \
     libheif1 \
@@ -38,9 +35,9 @@ msg_info "Installing PhotoPrism (Patience)"
 mkdir -p /opt/photoprism/{cache,config,photos,storage,temp}
 mkdir -p /opt/photoprism/photos/{originals,import}
 mkdir -p /opt/photoprism_backups
-wget -q -cO - https://dl.photoprism.app/pkg/linux/amd64.tar.gz | tar -xz -C /opt/photoprism --strip-components=1
-LIBHEIF_URL=$(wget -q -O - "https://dl.photoprism.app/dist/libheif/" | grep -oP "libheif-$(lsb_release -cs)-amd64-v[0-9\.]+\.tar\.gz" | sort -V | tail -n 1)
-wget -q -cO - "https://dl.photoprism.app/dist/libheif/$LIBHEIF_URL" | tar -xzf - -C /usr/local --strip-components=1
+curl -fsSL https://dl.photoprism.app/pkg/linux/amd64.tar.gz | tar -xz -C /opt/photoprism --strip-components=1
+LIBHEIF_URL=$(curl -fsSL "https://dl.photoprism.app/dist/libheif/" | grep -oP "libheif-$(lsb_release -cs)-amd64-v[0-9\.]+\.tar\.gz" | sort -V | tail -n 1)
+curl -fsSL "https://dl.photoprism.app/dist/libheif/$LIBHEIF_URL" | tar -xzf - -C /usr/local --strip-components=1
 ldconfig
 chmod -R 755 /opt/photoprism/photos/originals
 cat <<EOF >/opt/photoprism/config/.env
@@ -62,6 +59,35 @@ PHOTOPRISM_PUBLIC='false'
 PHOTOPRISM_DEBUG='false'
 EOF
 ln -sf /opt/photoprism/bin/photoprism /usr/local/bin/photoprism
+
+mkdir -p /etc/photoprism/
+cat <<EOF >/etc/photoprism/defaults.yml
+ConfigPath: "~/.config/photoprism"
+StoragePath: "/opt/photoprism/storage"
+OriginalsPath: "/opt/photoprism/photos/originals"
+ImportPath: "/media"
+AdminUser: "admin"
+AdminPassword: "changeme"
+AuthMode: "password"
+DatabaseDriver: "sqlite"
+HttpHost: "0.0.0.0"
+HttpPort: 2342
+HttpCompression: "gzip"
+DisableTLS: false
+DefaultTLS: true
+Experimental: false
+DisableWebDAV: false
+DisableSettings: false
+DisableTensorFlow: false
+DisableFaces: false
+DisableClassification: false
+DisableVectors: false
+DisableRaw: false
+RawPresets: false
+JpegQuality: 85
+DetectNSFW: false
+UploadNSFW: true
+EOF
 msg_ok "Installed PhotoPrism"
 
 msg_info "Creating Service"
